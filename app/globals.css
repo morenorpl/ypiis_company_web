@@ -24,3 +24,51 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* NAV MENU UNDERLINE EXPAND */
+.nav-link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link-underline::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2.5px;
+  bottom: 0;
+  left: 0;
+  background-color: #8c2c2c; /* Your Maroon Accent Color */
+
+  /* Core mechanism for center-out expansion */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-out;
+}
+
+.nav-link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+/* Center-out horizontal expand hover effect */
+.btn-expand-center {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 200ms ease-out;
+}
+
+.btn-expand-center::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--hover-bg, #1b1b1b); /* Fallback color */
+  z-index: -1;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 200ms ease-out;
+}
+
+.btn-expand-center:hover::before {
+  transform: scaleX(1);
+}

@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mb-14 px-10">
         {/* Left: Main Maroon Heading */}
         <div className="md:col-span-7">
-          <h1 className="text-3xl md:text-5xl font-extrabold text-[#8C2C2C] leading-tight tracking-tight uppercase">
+          <h1 className="text-3xl md:text-5xl font-black text-[#8C2C2C] leading-tight tracking-tight uppercase">
             Yayasan Pendidikan <br />
             Islam Imam Syafi'i
           </h1>
@@ -16,7 +16,7 @@ export default function HeroSection() {
 
         {/* Right: Intro Paragraph & Pill Button */}
         <div className="md:col-span-5 flex flex-col items-start md:items-start justify-between space-y-4">
-          <p className="text-xs md:text-sm text-gray-600 leading-relaxed text-left md:text-left max-w-md mb-10">
+          <p className="text-md font-medium text-[#1B1B1B] leading-relaxed text-left md:text-left max-w-md mb-10">
             Menanamkan benih tauhid dan adab sejak dini dalam lingkungan yang
             penuh kasih sayang. Fokus pada penanaman aqidah yang lurus, hafalan
             doa harian, dan pembiasaan adab islami.

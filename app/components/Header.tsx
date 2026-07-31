@@ -8,11 +8,21 @@ export default function Header() {
         {/* Logo Section */}
 
         {/* Simple Text Navigation */}
-        <nav className="flex items-center gap-50 text-sm text-[#8F918F]">
-          <Link href="/about">Tentang Kami</Link>
-          <Link href="/akademik">Akademik</Link>
+        <nav className="flex items-center gap-20 text-md text-[#8F918F] font-semibold">
+          <Link
+            href="/tentang-kami"
+            className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] py-2 px-1"
+          >
+            Tentang Kami
+          </Link>
+          <Link
+            href="/akademik"
+            className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] py-2 px-1"
+          >
+            Akademik
+          </Link>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center mx-80">
             <Image
               src="/YPIIS logo.svg"
               alt="YPIIS Logo"
@@ -21,8 +31,18 @@ export default function Header() {
             />
           </div>
 
-          <Link href="/pendaftaran">Pendaftaran</Link>
-          <Link href="/berita">Berita</Link>
+          <Link
+            href="/pendaftaran"
+            className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] py-2 px-1"
+          >
+            Pendaftaran
+          </Link>
+          <Link
+            href="/berita"
+            className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] py-2 px-1"
+          >
+            Berita
+          </Link>
         </nav>
       </div>
     </header>

@@ -87,13 +87,13 @@ export default function TentangKamiSection() {
                 Berdiri Sejak
               </h3>
               <p className="text-sm text-white font-medium mb-3 max-w-60 leading-tight">
-                YPIIS telah mengajarkan ilmu syar'i sejak tahun 2006.
+                YPIIS telah mengajarkan ilmu syar'i sejak tahun 2011.
               </p>
             </div>
 
             <div className="text-right shrink-0">
               <span className="text-7xl font-extrabold leading-none block">
-                20
+                15
               </span>
               <span className="text-md font-bold uppercase tracking-wider text-white block">
                 Tahun Berdiri

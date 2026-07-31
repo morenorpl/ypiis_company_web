@@ -17,7 +17,7 @@ export default function HeroSection() {
 
         {/* Right: Intro Paragraph & Pill Button */}
         <div className="md:col-span-5 flex flex-col items-start md:items-start justify-between space-y-4">
-          <p className="text-md font-medium text-[#1B1B1B] leading-relaxed text-left md:text-left max-w-md mb-10">
+          <p className="text-base font-medium text-[#1B1B1B] leading-relaxed text-left md:text-left max-w-md mb-10">
             Menanamkan benih tauhid dan adab sejak dini dalam lingkungan yang
             penuh kasih sayang. Fokus pada penanaman aqidah yang lurus, hafalan
             doa harian, dan pembiasaan adab islami.

@@ -77,6 +77,7 @@ body {
   overflow: hidden;
   z-index: 1;
   transition: color 200ms ease-out;
+  isolation: isolate;
 }
 
 .btn-expand-center::before {
@@ -85,11 +86,39 @@ body {
   inset: 0;
   background-color: var(--hover-bg, #1b1b1b); /* Fallback color */
   z-index: -1;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 200ms ease-out;
+
+  clip-path: inset(0 50% 0 50%);
+  transition: clip-path 200ms ease-out;
 }
 
 .btn-expand-center:hover::before {
-  transform: scaleX(1);
+  clip-path: inset(0 0% 0 0%);
+}
+
+/*  horizontal Scrolling Row Effect */
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-33.333%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-33.333%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+.animate-marquee-left {
+  animation: marquee-left linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right linear infinite;
 }

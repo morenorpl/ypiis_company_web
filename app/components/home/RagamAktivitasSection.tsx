@@ -175,7 +175,7 @@ export default function RagamAktivitasSection() {
         <h2 className="text-xl md:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
           RAGAM AKTIVITAS UNTUK MENGEMBANGKAN MINAT DAN BAKAT PELAJAR
         </h2>
-        <p className="text-gray-600 text-sm md:text-base font-semibold leading-relaxed max-w-4xl mx-auto">
+        <p className="text-[#1B1B1B] text-lg font-medium leading-relaxed max-w-5xl mx-auto">
           Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas.
           Melalui berbagai program intrakurikuler dan ekstrakurikuler, kami
           memfasilitasi siswa untuk mengeksplorasi minat, mengasah bakat, dan
@@ -271,9 +271,12 @@ function CardBox({ item }: { item: ActivityItem }) {
       ? "bg-[#582121] hover:bg-[#431919]"
       : "bg-[#8A7418] hover:bg-[#6D5B12]";
 
+  const buttonTextColors =
+    item.theme === "maroon" ? "text-[#ffffff] " : "text-[#FFF7DA] ";
+
   return (
     <div
-      className={`h-96.25 w-full ${bgColor} text-white p-6 flex flex-col justify-center shadow-sm relative group/card`}
+      className={`h-96.25 w-full ${bgColor} ${buttonTextColors} p-6 flex flex-col justify-center shadow-sm relative group/card`}
     >
       <div>
         {/* Category Header with lines */}

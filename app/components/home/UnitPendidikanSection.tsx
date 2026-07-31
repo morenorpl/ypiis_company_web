@@ -71,7 +71,7 @@ const EDUCATION_PROGRAMS: UnitPendidikan[] = [
       <>
         <span className="font-bold text-[#937A25]">Sekolah Dasar</span> adalah
         masa emas untuk{" "}
-        <span className="font-bold text-[#3E3E3E]">menghafal Al-Qur'an</span>.
+        <span className="font-bold text-[#937A25]">menghafal Al-Qur'an</span>.
         Program kami menyeimbangkan kurikulum nasional dengan target tahfidz dan
         pembentukan karakter islami yang kuat.
       </>
@@ -205,10 +205,10 @@ export default function UnitPendidikanSection() {
               <h2 className="text-7xl font-black text-[#1B1B1B] max-w-4xl uppercase mb-8 tracking-wide">
                 {activeProgram.title}
               </h2>
-              <p className="text-xl text-[#3E3E3E] mb-5 max-w-3xl font-semibold leading-relaxed">
+              <p className="text-xl text-[#1B1B1B] mb-5 max-w-3xl font-medium leading-relaxed">
                 {activeProgram.descriptionParagraph1}
               </p>
-              <p className="text-xl text-[#3E3E3E] max-w-3xl font-semibold leading-relaxed">
+              <p className="text-xl text-[#1B1B1B] max-w-3xl font-medium leading-relaxed">
                 {activeProgram.descriptionParagraph2}
               </p>
 

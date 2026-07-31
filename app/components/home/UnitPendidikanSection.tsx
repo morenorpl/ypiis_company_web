@@ -150,7 +150,7 @@ const EDUCATION_PROGRAMS: UnitPendidikan[] = [
 ];
 
 export default function UnitPendidikanSection() {
-  const [activeTabId, setActiveTabId] = useState<string>("taud");
+  const [activeTabId, setActiveTabId] = useState<string>("sd");
   const activeProgram =
     EDUCATION_PROGRAMS.find((program) => program.id === activeTabId) ||
     EDUCATION_PROGRAMS[0];
@@ -168,10 +168,10 @@ export default function UnitPendidikanSection() {
                 <div className="w-20 shrink-0">
                   <button
                     onClick={() => setActiveTabId(program.id)}
-                    className={`text-lg font-extrabold transition-colors duration-300 text-left whitespace-nowrap ${
+                    className={`text-lg cursor-pointer font-extrabold transition-colors duration-300 text-left whitespace-nowrap ${
                       isActive
                         ? "text-[#8A3635]"
-                        : "text-gray-300 hover:text-gray-500"
+                        : "text-[#D9D9D9] hover:text-[#A2A2A2]"
                     }`}
                   >
                     {program.shortLabel}

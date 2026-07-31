@@ -15,7 +15,7 @@ export default function TentangKamiSection() {
         <h2 className="text-6xl font-black text-[#8C2C2C] uppercase tracking-wide">
           Tentang Kami
         </h2>
-        <p className="text-lg Walter Black put yay wait a bunch of lies. Why is the sound like a something I have to tell you we can create rapidly scalable high impact companies in very little time with very little risk capital if we get the best of both worlds here we could completely reshape economies and so I want to introduce you to what I call AI driven enterprises AIDS AI driven enterprises bring the best of both worlds from small medium enterprise and innovation driven enterprise the AIDE growth model allows us to create these high impact rapid scale companies with extremely limited risk capital and upfront investment and then it allowed the split that one another another thing you can do with this yesterday massive people always say that she like technically cheats in every single Spider Man movie does she she does technically cheat she does technically cheat on Harry in Spider Man did what she did with Peter Parker in Spider you would call off the web yes can I play can I play bubble bit  text-[#1B1B1B]  font-medium leading-relaxed">
+        <p className="text-lg text-[#1B1B1B]  font-medium leading-relaxed">
           Sebuah yayasan di kabupaten Berau, Kalimantan Timur yang bergerak di
           bidang pendidikan Islam, pengabdian masyarakat, dan sosial.
         </p>
@@ -38,7 +38,7 @@ export default function TentangKamiSection() {
             </div>
           </div>
 
-          {/* Zakat Tersalurkan (Bottom Maroon Box) */}
+          {/* Lembaga Pendidikan (Bottom Maroon Box) */}
           <div className="bg-[#89302F] text-white border-2 border-[#A2A2A2] rounded-sm px-4 py-4 flex flex-col justify-between flex-1 min-h-55">
             <h3 className="text-3xl font-black uppercase tracking-wider mb-20 text-white/90">
               Lembaga Pendidikan
@@ -95,8 +95,8 @@ export default function TentangKamiSection() {
             </div>
 
             <div className="text-right shrink-0">
-              <span className="text-7xl font-extrabold leading-none block">
-                15
+              <span className="text-7xl font-black leading-none block">
+                15+
               </span>
               <span className="text-md font-bold uppercase tracking-wider text-white block">
                 Tahun Berdiri

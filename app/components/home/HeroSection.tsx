@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FiArrowUpRight } from "react-icons/fi";
 
 export default function HeroSection() {
   return (
@@ -29,19 +30,7 @@ export default function HeroSection() {
             <span>Daftar Sekarang</span>
             {/* Arrow Icon */}
             <div className="flex justify-start md:justify-center items-center bg-white w-10 h-10 rounded-full">
-              <svg
-                className="w-5 h-5"
-                fill="none"
-                stroke="#8C2C2C"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={3}
-                  d="M9 5l7 7-7 7"
-                />
-              </svg>
+              <FiArrowUpRight size={25} color="#8C2C2C" />
             </div>
           </Link>
         </div>

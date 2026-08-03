@@ -8,7 +8,7 @@ export default function Header() {
         {/* Logo Section */}
 
         {/* Simple Text Navigation */}
-        <nav className="flex items-center gap-20 text-md text-[#8F918F] font-semibold">
+        <nav className="flex items-center md:gap-12 gap-20 text-md text-[#8F918F] font-semibold">
           <Link
             href="/tentang-kami"
             className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] py-2 px-1"

@@ -10,7 +10,7 @@ import PetaLokasiSection from "./components/home/PetaLokasiSection";
 
 export default function HomePage() {
   return (
-    <div className="space-y-40 pb-16">
+    <div className="space-y-24 2xl:space-y-40  pb-16">
       {/* 1. Hero Section (Image and Title) */}
       <HeroSection />
 

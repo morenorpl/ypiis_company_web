@@ -4,7 +4,7 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function HeroSection() {
   return (
-    <section className="container mx-auto px-10 py-6 md:py-10">
+    <section className="container mx-auto px-10 py-6">
       {/* 1. TOP HEADER GRID (Title + Subtext & Button) */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mb-14 px-10">
         {/* Left: Main Maroon Heading */}

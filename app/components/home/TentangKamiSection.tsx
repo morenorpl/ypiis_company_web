@@ -9,13 +9,13 @@ const MISSION_POINTS = [
 
 export default function TentangKamiSection() {
   return (
-    <section className="container mx-auto px-10 py-8">
+    <section className="container mx-auto px-10 py-6">
       {/* 1. SECTION HEADER */}
-      <div className="mb-12 space-y-6 max-w-3xl px-8">
-        <h2 className="text-6xl font-black text-[#8C2C2C] uppercase tracking-wide">
+      <div className="mb-12 space-y-6 max-w-2xl 2xl:max-w-3xl px-8">
+        <h2 className="text-5xl 2xl:text-6xl font-black text-[#8C2C2C] uppercase tracking-wide">
           Tentang Kami
         </h2>
-        <p className="text-lg text-[#1B1B1B] font-medium leading-relaxed">
+        <p className="text-base 2xl:text-lg text-[#1B1B1B] font-medium leading-relaxed">
           Sebuah yayasan di kabupaten Berau, Kalimantan Timur yang bergerak di
           bidang pendidikan Islam, pengabdian masyarakat, dan sosial.
         </p>
@@ -27,11 +27,11 @@ export default function TentangKamiSection() {
         <div className="lg:col-span-4 flex flex-col gap-5 justify-between">
           {/* Visi Kami (Top Light Box) */}
           <div className="bg-[#F8F7F3] border-2 border-[#A2A2A2] flex justify-start flex-col rounded-sm px-4 py-4">
-            <h3 className="text-3xl font-black text-black uppercase mb-12">
+            <h3 className="text-2xl 2xl:text-3xl font-black text-black uppercase mb-12">
               Visi Kami
             </h3>
             <div className="max-w-90">
-              <p className="text-base text-[#1B1B1B] font-medium leading-relaxed">
+              <p className="text-sm 2xl:text-base text-[#1B1B1B] font-medium leading-relaxed">
                 Mewujudkan umat yang kembali kepada Al-Qur'an dan As-Sunnah
                 dengan pemahaman para Sahabat
               </p>
@@ -40,7 +40,7 @@ export default function TentangKamiSection() {
 
           {/* Lembaga Pendidikan (Bottom Maroon Box) */}
           <div className="bg-[#89302F] text-white border-2 border-[#A2A2A2] rounded-sm px-4 py-4 flex flex-col justify-between flex-1 min-h-55">
-            <h3 className="text-3xl font-extrabold uppercase tracking-wider mb-20 text-white/90">
+            <h3 className="text-2xl 2xl:text-3xl font-extrabold uppercase tracking-wider text-white/90">
               Lembaga Pendidikan
             </h3>
             <div className="mt-8">
@@ -51,8 +51,8 @@ export default function TentangKamiSection() {
                 Sekolah
               </span>
 
-              <div className="max-w-100">
-                <p className="text-md text-white font-medium leading-relaxed">
+              <div className="max-w-70">
+                <p className="text-sm 2xl:text-base text-white font-medium leading-relaxed">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Integer semper urna e.
                 </p>
@@ -65,10 +65,10 @@ export default function TentangKamiSection() {
         <div className="lg:col-span-4 flex flex-col gap-5 justify-between">
           {/* Misi Kami (Top Tall Light Box) */}
           <div className="bg-[#F8F7F3] border-2 border-[#A2A2A2] rounded-sm p-4 shadow-sm flex-1">
-            <h3 className="text-3xl font-black text-[#1B1B1B] uppercase mb-10">
+            <h3 className="text-2xl 2xl:text-3xl font-black text-[#1B1B1B] uppercase mb-10">
               Misi Kami
             </h3>
-            <ol className="space-y-5 text-base font-medium text-[#1B1B1B] list-none">
+            <ol className="space-y-5 text-sm 2xl:text-base font-medium text-[#1B1B1B] list-none">
               {MISSION_POINTS.map((point, index) => (
                 <li
                   key={index}
@@ -86,10 +86,10 @@ export default function TentangKamiSection() {
           {/* Berdiri Sejak (Bottom Gold Box) */}
           <div className="bg-[#C29B1D] text-[#FFF7DA] border-2 border-[#A2A2A2] rounded-sm p-4 flex items-end justify-between min-h-27.5">
             <div className="space-y-1">
-              <h3 className="text-3xl font-extrabold mb-20 uppercase tracking-wide ">
+              <h3 className="text-2xl 2xl:text-3xl font-extrabold mb-20 uppercase tracking-wide ">
                 Berdiri Sejak
               </h3>
-              <p className="text-md text-white font-medium mb-2 max-w-60 leading-tight">
+              <p className="text-sm 2xl:text-base text-white font-medium mb-2 max-w-50 leading-tight">
                 YPIIS telah mengajarkan ilmu syar'i sejak tahun 2006.
               </p>
             </div>

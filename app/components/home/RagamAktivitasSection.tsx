@@ -169,13 +169,13 @@ export default function RagamAktivitasSection() {
     });
   };
   return (
-    <section className="py-16 bg-[#FAF8F5] relative overflow-hidden">
+    <section className="py-6 bg-[#FAF8F5] relative overflow-hidden">
       {/* Header Container */}
-      <div className="max-w-7xl mx-auto text-center px-4 mb-12">
-        <h2 className="text-xl md:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
+      <div className="max-w-5xl 2xl:max-w-7xl mx-auto text-center px-4 mb-12">
+        <h2 className="text-4xl 2xl:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
           RAGAM AKTIVITAS UNTUK MENGEMBANGKAN MINAT DAN BAKAT PELAJAR
         </h2>
-        <p className="text-[#1B1B1B] text-lg font-medium leading-relaxed max-w-5xl mx-auto">
+        <p className="text-[#1B1B1B] text-base 2xl:text-lg font-medium leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">
           Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas.
           Melalui berbagai program intrakurikuler dan ekstrakurikuler, kami
           memfasilitasi siswa untuk mengeksplorasi minat, mengasah bakat, dan
@@ -232,13 +232,13 @@ export default function RagamAktivitasSection() {
         {/* Scrollable Container (CSS Snap Enabled) */}
         <div
           ref={scrollContainerRef}
-          className="flex gap-0 overflow-x-auto snap-x scrollbar-hide py-2"
+          className="flex gap-0 overflow-x-auto snap-x scrollbar-hide"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {ACTIVITY_COLUMNS.map((col) => (
             <div
               key={col.id}
-              className="flex-none sm:w-[385px] flex flex-col gap-0 snap-start shrink-0"
+              className="flex-none  w-[320px] 2xl:w-96.25 flex flex-col gap-0 snap-start shrink-0"
             >
               <CardBox item={col.top} />
               <CardBox item={col.bottom} />
@@ -253,7 +253,7 @@ export default function RagamAktivitasSection() {
 function CardBox({ item }: { item: ActivityItem }) {
   if (item.theme === "image") {
     return (
-      <div className="relative h-96.25 w-full overflow-hidden shadow-sm group/card">
+      <div className="relative h-80 2xl:h-96 w-full overflow-hidden shadow-sm group/card">
         <Image
           src={item.imageSrc}
           alt="Aktivitas"
@@ -276,25 +276,25 @@ function CardBox({ item }: { item: ActivityItem }) {
 
   return (
     <div
-      className={`h-96.25 w-full ${bgColor} ${buttonTextColors} p-6 flex flex-col justify-center shadow-sm relative group/card`}
+      className={`h-80 2xl:h-96 w-full ${bgColor} ${buttonTextColors} p-6 flex flex-col justify-center shadow-sm relative group/card`}
     >
       <div>
         {/* Category Header with lines */}
         <div className="flex items-center justify-center gap-6 mb-6">
           <span className="w-4 h-px bg-white/60" />
-          <span className="text-xs font-extrabold uppercase tracking-wider text-white/90">
+          <span className="text-xs 2xl:text-sm font-extrabold uppercase tracking-wider text-white/90">
             {item.category}
           </span>
           <span className="w-4 h-px bg-white/60" />
         </div>
 
         {/* Title */}
-        <h3 className="text-xl sm:text-3xl font-bold text-center mb-3 leading-snug">
+        <h3 className="text-2xl 2xl:text-3xl font-bold text-center mb-3 leading-snug">
           {item.title}
         </h3>
 
         {/* Description */}
-        <p className="text-xs sm:text-sm text-center text-white/80 leading-relaxed max-w-xs mx-auto mb-10">
+        <p className="text-xs 2xl:text-sm text-center text-white/80 leading-relaxed max-w-xs mx-auto mb-10">
           {item.description}
         </p>
       </div>

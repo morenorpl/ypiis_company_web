@@ -42,19 +42,19 @@ const FACILITIES: GedungFasilitasItem[] = [
 
 export default function GedungFasilitasSection() {
   return (
-    <section className="py-16 bg-[#FAF8F5]">
+    <section className="py-6 bg-[#FAF8F5]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-2 mb-6">
           <div>
-            <span className="text-xs sm:text-base font-black uppercase tracking-wider text-[#8A3635]">
+            <span className="text-sm 2xl:text-base font-black uppercase tracking-wider text-[#8A3635]">
               GEDUNG DAN FASILITAS
             </span>
-            <h2 className="text-3xl sm:text-6xl font-black text-[#1B1B1B] uppercase tracking-tight mt-1">
+            <h2 className="text-5xl 2xl:text-6xl font-black text-[#1B1B1B] uppercase tracking-tight mt-1">
               FASILITAS YPIIS
             </h2>
           </div>
-          <p className="text-[#3E3E3E] font-medium text-base max-w-md leading-relaxed md:text-right">
+          <p className="text-[#3E3E3E] font-medium text-sm 2xl:text-base max-w-md leading-relaxed md:text-right">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. In mattis
             erat lectus, eget fringilla dolor tincidunt
           </p>

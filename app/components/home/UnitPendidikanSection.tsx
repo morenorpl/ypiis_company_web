@@ -156,7 +156,7 @@ export default function UnitPendidikanSection() {
     EDUCATION_PROGRAMS[0];
 
   return (
-    <section className="container mx-auto px-16 py-8">
+    <section className="container mx-auto px-16 py-6">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-start">
         {/* 1. LEFT SECTION */}
         <div className="col-start-2 mt-16 col-span-2 flex flex-row md:flex-col gap-2 items-start overflow-x-auto md:overflow-visible pb-4 md:pb-0">
@@ -190,8 +190,8 @@ export default function UnitPendidikanSection() {
         </div>
 
         {/* 2. RIGHT SECTION */}
-        <div className="mb-12 col-span-9 space-y-3 min-h-125 px-0">
-          <h3 className="text-xl font-black text-[#8C2C2C] uppercase tracking-wider">
+        <div className="col-span-9 space-y-3 min-h-120 px-0">
+          <h3 className="text-lg 2xl:text-xl font-black text-[#8C2C2C] uppercase tracking-wider">
             Unit Pendidikan
           </h3>
           <AnimatePresence mode="wait">
@@ -202,13 +202,13 @@ export default function UnitPendidikanSection() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-7xl font-black text-[#1B1B1B] max-w-4xl uppercase mb-8 tracking-wide">
+              <h2 className="text-5xl 2xl:text-7xl font-black text-[#1B1B1B] max-w-4xl uppercase mb-8 tracking-wide">
                 {activeProgram.title}
               </h2>
-              <p className="text-xl text-[#1B1B1B] mb-5 max-w-3xl font-medium leading-relaxed">
+              <p className="text-lg 2xl:text-xl text-[#1B1B1B] mb-5 max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
                 {activeProgram.descriptionParagraph1}
               </p>
-              <p className="text-xl text-[#1B1B1B] max-w-3xl font-medium leading-relaxed">
+              <p className="text-lg 2xl:text-xl text-[#1B1B1B] max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
                 {activeProgram.descriptionParagraph2}
               </p>
 
@@ -216,7 +216,7 @@ export default function UnitPendidikanSection() {
                 <Link
                   href={activeProgram.href}
                   className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 
-                  bg-[#8A3635] text-white text-lg font-medium px-16 py-6 rounded-sm"
+                  bg-[#8A3635] text-white text-base 2xl:text-lg font-medium px-12 py-4 2xl:px-16 2xl:py-6 rounded-sm"
                 >
                   <svg
                     className="w-4 h-4"

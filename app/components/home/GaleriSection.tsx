@@ -110,7 +110,7 @@ const ROW_3: GalleryItem[] = [
 
 export default function GaleriSection() {
   return (
-    <section className="py-16 bg-[#FAF8F5] overflow-hidden">
+    <section className="py-6 bg-[#FAF8F5] overflow-hidden">
       <div className="flex flex-col gap-6 w-full">
         {/* Row 1: Left Infinite Scroll */}
         <ScrollingRow items={ROW_1} direction="left" speed="35s" />

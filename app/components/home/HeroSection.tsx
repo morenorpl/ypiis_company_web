@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import FadeIn from "../animation/FadeIn";
+import HoverButton from "../animation/HoverButton";
 
 export default function HeroSection() {
   return (
@@ -44,16 +45,7 @@ export default function HeroSection() {
             x={50}
             once={true}
           >
-            <Link
-              href="/profil"
-              className="inline-flex items-center gap-10 bg-[#8C2C2C] hover:bg-[#722323] text-white text-md font-normal pl-5 pr-1 py-1   rounded-full transition-colors shadow-sm"
-            >
-              <span>Daftar Sekarang</span>
-              {/* Arrow Icon */}
-              <div className="flex justify-start md:justify-center items-center bg-white w-10 h-10 rounded-full">
-                <FiArrowUpRight size={25} color="#8C2C2C" />
-              </div>
-            </Link>
+            <HoverButton />
           </FadeIn>
         </div>
       </div>

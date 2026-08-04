@@ -1,101 +1,152 @@
-import Image from "next/image";
+"use client";
+
 import Link from "next/link";
-
-// 1. Clean data structures for links
-const QUICK_LINKS = [
-  { name: "Tentang Kami", href: "/tentang-kami" },
-  { name: "Akademik", href: "/akademik" },
-  { name: "Berita & Artikel", href: "/berita" },
-  { name: "Galeri", href: "/galeri" },
-];
-
-const PROGRAM_LINKS = [
-  { name: "Sekolah Dasar (SD)", href: "/program/sd" },
-  { name: "Sekolah Menengah (SMP)", href: "/program/smp" },
-  { name: "Pendaftaran", href: "/pendaftaran" },
-  { name: "Donasi", href: "/donasi" },
-];
+import { FaInstagram, FaFacebook } from "react-icons/fa";
+import { IoIosMail } from "react-icons/io";
+import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="w-full">
-      <div className="bg-[#8C2C2C] text-white pt-12 pb-6">
-        <div className="container mx-auto px-4">
-          {/* Main Footer Content Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-white/20">
-            {/* Column 1: Brand & Logo */}
-            <div className="md:col-span-2 space-y-4">
-              <div className="flex items-center gap-3">
-                <div className="bg-white p-2 rounded-full w-12 h-12 flex items-center justify-center">
-                  <Image
-                    src="/YPIIS logo.svg"
-                    alt="YPIIS Logo"
-                    width={32}
-                    height={32}
-                    className="object-contain"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg leading-tight uppercase tracking-wider">
-                    Yayasan Pendidikan
-                    <br />
-                    Islam Imam Syafi'i
-                  </h3>
-                </div>
-              </div>
-              <p className="text-xs text-white/80 max-w-sm leading-relaxed">
-                Membentuk generasi Rabbani yang berakhlaqul karimah, cerdas, dan
-                mandiri berdasarkan Al-Qur'an dan Sunnah.
-              </p>
-            </div>
+    <footer className="w-full bg-[#7D2828] text-white">
+      {/* 1. Top Decorative Pattern Bar */}
+      <div className="w-full h-24 bg-[#7D2828] relative overflow-hidden flex justify-center items-center">
+        {/* SVG Geometric Pattern matching your design */}
+        <Image
+          src="/footer-top-border-art-3.svg"
+          alt="Decorative Pattern"
+          fill
+          className="object-cover object-right opacity-100"
+        />
+      </div>
 
-            {/* Column 2: Quick Links */}
-            <div className="space-y-3">
-              <h4 className="font-semibold text-sm tracking-wide text-amber-200 uppercase">
-                Navigasi
-              </h4>
-              <ul className="space-y-2 text-xs text-white/80">
-                {QUICK_LINKS.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-amber-200 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+      {/* 2. Main Content Container */}
+      <div className="max-w-6xl mx-auto px-6 py-18 grid grid-cols-1 md:grid-cols-3 gap-40 items-center text-center">
+        {/* Left Column Navigation */}
+        <div className="flex flex-col space-y-4">
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Social
+          </Link>
+          <div className="w-full border-t border-white/30" />
 
-            {/* Column 3: Programs & Info */}
-            <div className="space-y-3">
-              <h4 className="font-semibold text-sm tracking-wide text-amber-200 uppercase">
-                Program & Informasi
-              </h4>
-              <ul className="space-y-2 text-xs text-white/80">
-                {PROGRAM_LINKS.map((link) => (
-                  <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="hover:text-amber-200 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            FAQs
+          </Link>
+          <div className="w-full border-t border-white/30" />
+
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Hubungi Kami
+          </Link>
+          <div className="w-full border-t border-white/30" />
+
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Donasi
+          </Link>
+        </div>
+
+        {/* Center Column - Logo & Social Icons */}
+        <div className="flex flex-col items-center justify-center space-y-4">
+          {/* Logo Placeholder - Replace src with your actual logo asset */}
+          <div className="w-24 h-24 relative flex items-center justify-center">
+            <Image
+              className="w-24 h-24 max-w-full max-h-full object-contain brightness-100"
+              src="/YPIIS logo white.svg"
+              alt="YPIIS Logo"
+              width={100}
+              height={100}
+            />
           </div>
 
-          {/* Bottom Copyright bar */}
-          <div className="pt-6 text-center text-xs text-white/60 flex flex-col sm:flex-row justify-between items-center gap-2">
-            <p>
-              © {new Date().getFullYear()} Yayasan Pendidikan Islam Imam
-              Syafi'i. All rights reserved.
-            </p>
-            <p className="text-[10px]">Designed & Developed for YPIIS</p>
+          <h2 className="text-xl md:text-2xl font-semibold leading-tight max-w-xs">
+            Yayasan Pendidikan Islam Imam Syafi’i
+          </h2>
+
+          {/* Social Icons */}
+          <div className="flex items-center space-x-4 pt-2">
+            <Link
+              href="#"
+              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-5 h-5" />
+            </Link>
+            <Link
+              href="#"
+              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
+              aria-label="Facebook"
+            >
+              <FaFacebook className="w-5 h-5" />
+            </Link>
+            <Link
+              href="#"
+              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
+              aria-label="Email"
+            >
+              <IoIosMail className="w-5 h-5" />
+            </Link>
           </div>
+        </div>
+
+        {/* Right Column Navigation */}
+        <div className="flex flex-col space-y-4">
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Tentang Kami
+          </Link>
+          <div className="w-full border-t border-white/30" />
+
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Akademik
+          </Link>
+          <div className="w-full border-t border-white/30" />
+
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Pendaftaran
+          </Link>
+          <div className="w-full border-t border-white/30" />
+
+          <Link
+            href="#"
+            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
+          >
+            Berita
+          </Link>
+        </div>
+      </div>
+
+      {/* 3. Bottom Mustard Yellow Copyright Bar */}
+      <div className="w-full bg-[#B89C13] py-3 text-center text-xs md:text-sm font-bold text-[#6D570F]">
+        <div className="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
+          <span>© 2026 YPIIS</span>
+          <span>|</span>
+          <span>All Rights Reserved</span>
+          <span>|</span>
+          <Link href="#" className="hover:underline">
+            Privacy Policy
+          </Link>
+          <span>|</span>
+          <Link href="#" className="hover:underline">
+            Terms & Conditions
+          </Link>
         </div>
       </div>
     </footer>

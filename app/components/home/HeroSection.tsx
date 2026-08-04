@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
+import FadeIn from "../animation/FadeIn";
 
 export default function HeroSection() {
   return (
@@ -8,36 +9,63 @@ export default function HeroSection() {
       {/* 1. TOP HEADER GRID (Title + Subtext & Button) */}
       <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start mb-14 px-10">
         {/* Left: Main Maroon Heading */}
-        <div className="md:col-span-7">
+        <FadeIn
+          className="md:col-span-7"
+          delay={0}
+          duration={1}
+          x={-50}
+          once={true}
+        >
           <h1 className="text-3xl md:text-5xl font-black text-[#8C2C2C] leading-tight tracking-tight uppercase">
             Yayasan Pendidikan <br />
             Islam Imam Syafi'i
           </h1>
-        </div>
+        </FadeIn>
 
         {/* Right: Intro Paragraph & Pill Button */}
         <div className="md:col-span-5 flex flex-col items-start md:items-start justify-between space-y-4">
-          <p className="text-base font-medium text-[#1B1B1B] leading-relaxed text-left md:text-left max-w-md mb-10">
-            Menanamkan benih tauhid dan adab sejak dini dalam lingkungan yang
-            penuh kasih sayang. Fokus pada penanaman aqidah yang lurus, hafalan
-            doa harian, dan pembiasaan adab islami.
-          </p>
-
-          <Link
-            href="/profil"
-            className="inline-flex items-center gap-10 bg-[#8C2C2C] hover:bg-[#722323] text-white text-md font-normal pl-5 pr-1 py-1   rounded-full transition-colors shadow-sm"
+          <FadeIn
+            className="md:col-span-5"
+            delay={0.2}
+            duration={1}
+            x={50}
+            once={true}
           >
-            <span>Daftar Sekarang</span>
-            {/* Arrow Icon */}
-            <div className="flex justify-start md:justify-center items-center bg-white w-10 h-10 rounded-full">
-              <FiArrowUpRight size={25} color="#8C2C2C" />
-            </div>
-          </Link>
+            <p className="text-base font-medium text-[#1B1B1B] leading-relaxed text-left md:text-left max-w-md mb-10">
+              Menanamkan benih tauhid dan adab sejak dini dalam lingkungan yang
+              penuh kasih sayang. Fokus pada penanaman aqidah yang lurus,
+              hafalan doa harian, dan pembiasaan adab islami.
+            </p>
+          </FadeIn>
+          <FadeIn
+            className="md:col-span-5"
+            delay={0.4}
+            duration={1}
+            x={50}
+            once={true}
+          >
+            <Link
+              href="/profil"
+              className="inline-flex items-center gap-10 bg-[#8C2C2C] hover:bg-[#722323] text-white text-md font-normal pl-5 pr-1 py-1   rounded-full transition-colors shadow-sm"
+            >
+              <span>Daftar Sekarang</span>
+              {/* Arrow Icon */}
+              <div className="flex justify-start md:justify-center items-center bg-white w-10 h-10 rounded-full">
+                <FiArrowUpRight size={25} color="#8C2C2C" />
+              </div>
+            </Link>
+          </FadeIn>
         </div>
       </div>
 
       {/* 2. HERO IMAGE BANNER WITH OVERLAY TEXT */}
-      <div className="relative w-full h-[280px] sm:h-[380px] md:h-[480px] rounded-2xl overflow-hidden shadow-md">
+      <FadeIn
+        className="relative w-full h-[280px] sm:h-[380px] md:h-[480px] rounded-2xl overflow-hidden shadow-md"
+        delay={0.6}
+        duration={1}
+        y={50}
+        once={true}
+      >
         {/* Base Background Image */}
         <Image
           src="/hero-school.jpg" // Place your high-res hero image in public/hero-campus.jpg
@@ -50,7 +78,7 @@ export default function HeroSection() {
 
         {/* Dark Gradient Overlay for Text Legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-      </div>
+      </FadeIn>
     </section>
   );
 }

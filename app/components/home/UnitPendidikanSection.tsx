@@ -1,8 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 import Link from "next/link";
+import FadeIn from "../animation/FadeIn";
 
 interface UnitPendidikan {
   id: string;
@@ -149,6 +150,22 @@ const EDUCATION_PROGRAMS: UnitPendidikan[] = [
   },
 ];
 
+// Motion Variants for Staggered Tab Sequence
+const tabContainerVariants = {
+  hidden: { opacity: 0 },
+  show: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12, // Stagger delay between each button
+    },
+  },
+};
+
+const tabItemVariants: Variants = {
+  hidden: { opacity: 0, x: -12 },
+  show: { opacity: 1, x: 0, transition: { duration: 0.35, ease: "easeOut" } },
+};
+
 export default function UnitPendidikanSection() {
   const [activeTabId, setActiveTabId] = useState<string>("sd");
   const activeProgram =
@@ -158,15 +175,22 @@ export default function UnitPendidikanSection() {
   return (
     <section className="container mx-auto px-16 py-6">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-0 items-start">
-        {/* 1. LEFT SECTION */}
-        <div className="col-start-2 mt-16 col-span-2 flex flex-row md:flex-col gap-2 items-start overflow-x-auto md:overflow-visible pb-4 md:pb-0">
+        {/* 1. LEFT SECTION (Tab List with In-View Stagger Animation) */}
+        <motion.div
+          variants={tabContainerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, amount: 0.2 }}
+          className="col-start-2 mt-16 col-span-2 flex flex-row md:flex-col gap-2 items-start overflow-x-auto md:overflow-visible pb-4 md:pb-0"
+        >
           {EDUCATION_PROGRAMS.map((program) => {
             const isActive = program.id === activeTabId;
 
             return (
               <div key={program.id} className="flex items-center gap-2">
                 <div className="w-20 shrink-0">
-                  <button
+                  <motion.button
+                    variants={tabItemVariants}
                     onClick={() => setActiveTabId(program.id)}
                     className={`text-lg cursor-pointer font-extrabold transition-colors duration-300 text-left whitespace-nowrap ${
                       isActive
@@ -175,7 +199,7 @@ export default function UnitPendidikanSection() {
                     }`}
                   >
                     {program.shortLabel}
-                  </button>
+                  </motion.button>
                 </div>
 
                 {/* Horizontal Indicator Line for Active Tab */}
@@ -187,13 +211,16 @@ export default function UnitPendidikanSection() {
               </div>
             );
           })}
-        </div>
+        </motion.div>
 
         {/* 2. RIGHT SECTION */}
         <div className="col-span-9 space-y-3 min-h-120 px-0">
-          <h3 className="text-lg 2xl:text-xl font-black text-[#8C2C2C] uppercase tracking-wider">
-            Unit Pendidikan
-          </h3>
+          <FadeIn delay={0} duration={1} x={50} once={true}>
+            <h3 className="text-lg 2xl:text-xl font-black text-[#8C2C2C] uppercase tracking-wider">
+              Unit Pendidikan
+            </h3>
+          </FadeIn>
+
           <AnimatePresence mode="wait">
             <motion.div
               key={activeProgram.id}
@@ -202,17 +229,29 @@ export default function UnitPendidikanSection() {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <h2 className="text-5xl 2xl:text-7xl font-black text-[#1B1B1B] max-w-4xl uppercase mb-8 tracking-wide">
-                {activeProgram.title}
-              </h2>
-              <p className="text-lg 2xl:text-xl text-[#1B1B1B] mb-5 max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
-                {activeProgram.descriptionParagraph1}
-              </p>
-              <p className="text-lg 2xl:text-xl text-[#1B1B1B] max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
-                {activeProgram.descriptionParagraph2}
-              </p>
+              <FadeIn delay={0.2} duration={1} x={50} once={true}>
+                <h2 className="text-5xl 2xl:text-7xl font-black text-[#1B1B1B] max-w-4xl uppercase mb-8 tracking-wide">
+                  {activeProgram.title}
+                </h2>
+              </FadeIn>
+              <FadeIn delay={0.4} duration={1} x={50} once={true}>
+                <p className="text-lg 2xl:text-xl text-[#1B1B1B] mb-5 max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
+                  {activeProgram.descriptionParagraph1}
+                </p>
+              </FadeIn>
+              <FadeIn delay={0.6} duration={1} x={50} once={true}>
+                <p className="text-lg 2xl:text-xl text-[#1B1B1B] max-w-2xl 2xl:max-w-3xl font-medium leading-relaxed">
+                  {activeProgram.descriptionParagraph2}
+                </p>
+              </FadeIn>
 
-              <div className="pt-14">
+              <FadeIn
+                className="pt-14"
+                delay={0.8}
+                duration={1}
+                x={50}
+                once={true}
+              >
                 <Link
                   href={activeProgram.href}
                   className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 
@@ -233,7 +272,7 @@ export default function UnitPendidikanSection() {
                   </svg>
                   <span>Lihat Selengkapnya</span>
                 </Link>
-              </div>
+              </FadeIn>
             </motion.div>
           </AnimatePresence>
         </div>

@@ -1,5 +1,7 @@
 "use client";
 
+import FadeIn from "../animation/FadeIn";
+
 export default function PetaLokasiSection() {
   // Google Maps embed URL for the address in Tanjung Redeb, Berau
   const mapEmbedUrl =
@@ -9,86 +11,90 @@ export default function PetaLokasiSection() {
     <section className="py-6 bg-[#FAF8F5]">
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-6 2xl:px-8">
         {/* Outer Container with Maroon Border */}
-        <div className="relative w-full h-130 2xl:h-145 rounded-sm border-4 border-[#7C3131] overflow-hidden shadow-md">
-          {/* Embedded Interactive Google Map */}
-          <iframe
-            title="Lokasi YPIIS Berau"
-            src={mapEmbedUrl}
-            width="100%"
-            height="100%"
-            style={{ border: 0 }}
-            allowFullScreen={false}
-            loading="lazy"
-            referrerPolicy="no-referrer-when-downgrade"
-            className="w-full h-full grayscale-[20%] contrast-[105%]"
-          />
+        <FadeIn delay={0.2} duration={1} y={50} once={true}>
+          <div className="relative w-full h-130 2xl:h-145 rounded-sm border-4 border-[#7C3131] overflow-hidden shadow-md">
+            {/* Embedded Interactive Google Map */}
+            <iframe
+              title="Lokasi YPIIS Berau"
+              src={mapEmbedUrl}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={false}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              className="w-full h-full grayscale-[20%] contrast-[105%]"
+            />
 
-          {/* Overlaid Floating Info Box at Bottom Center */}
-          <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 w-[60%] 2xl:w-[92%] max-w-3xl bg-[#F9F6EE] border-2 border-[#7C3131] rounded-2xl p-4 sm:p-6 shadow-xl z-10 backdrop-blur-sm">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10  text-xs sm:text-sm">
-              {/* Column 1: Alamat */}
-              <div className="flex flex-col gap-1">
-                <h4 className="font-bold text-[#7C3131] text-sm">Alamat</h4>
-                <p className="text-[#552323] leading-relaxed text-xs 2xl:text-sm font-medium">
-                  Jl. Pulau Panjang Gg. Karomah No.RT 23, Tj. Redeb, Kec. Tj.
-                  Redeb, Kabupaten Berau, Kalimantan Timur 77311
-                </p>
-              </div>
-
-              {/* Column 2: Social Media */}
-              <div className="flex flex-col gap-3">
-                <div>
-                  <h4 className="font-bold text-[#7C3131] text-sm">Facebook</h4>
-                  <a
-                    href="https://facebook.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
-                  >
-                    YPIIS Berau
-                  </a>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-[#7C3131] text-sm">
-                    X(Twitter)
-                  </h4>
-                  <a
-                    href="https://twitter.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
-                  >
-                    Yay Imam Syafi'i
-                  </a>
-                </div>
-              </div>
-
-              {/* Column 3: Contact Info */}
-              <div className="flex flex-col gap-3">
-                <div>
-                  <h4 className="font-bold text-[#7C3131] text-sm">Email</h4>
-                  <a
-                    href="mailto:info@ypiis.com"
-                    className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
-                  >
-                    info@ypiis.com
-                  </a>
-                </div>
-
-                <div>
-                  <h4 className="font-bold text-[#7C3131] text-sm">Telp.</h4>
-                  <p className="text-[#552323] text-xs 2xl:text-sm font-medium">
-                    08115405834{" "}
-                    <span className="text-[#7C3131]/80 text-xs">
-                      (Hanya SMS)
-                    </span>
+            {/* Overlaid Floating Info Box at Bottom Center */}
+            <div className="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 w-[60%] 2xl:w-[92%] max-w-3xl bg-[#F9F6EE] border-2 border-[#7C3131] rounded-2xl p-4 sm:p-6 shadow-xl z-10 backdrop-blur-sm">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-10  text-xs sm:text-sm">
+                {/* Column 1: Alamat */}
+                <div className="flex flex-col gap-1">
+                  <h4 className="font-bold text-[#7C3131] text-sm">Alamat</h4>
+                  <p className="text-[#552323] leading-relaxed text-xs 2xl:text-sm font-medium">
+                    Jl. Pulau Panjang Gg. Karomah No.RT 23, Tj. Redeb, Kec. Tj.
+                    Redeb, Kabupaten Berau, Kalimantan Timur 77311
                   </p>
+                </div>
+
+                {/* Column 2: Social Media */}
+                <div className="flex flex-col gap-3">
+                  <div>
+                    <h4 className="font-bold text-[#7C3131] text-sm">
+                      Facebook
+                    </h4>
+                    <a
+                      href="https://facebook.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
+                    >
+                      YPIIS Berau
+                    </a>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-[#7C3131] text-sm">
+                      X(Twitter)
+                    </h4>
+                    <a
+                      href="https://twitter.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
+                    >
+                      Yay Imam Syafi'i
+                    </a>
+                  </div>
+                </div>
+
+                {/* Column 3: Contact Info */}
+                <div className="flex flex-col gap-3">
+                  <div>
+                    <h4 className="font-bold text-[#7C3131] text-sm">Email</h4>
+                    <a
+                      href="mailto:info@ypiis.com"
+                      className="text-[#552323] text-xs 2xl:text-sm hover:underline font-medium"
+                    >
+                      info@ypiis.com
+                    </a>
+                  </div>
+
+                  <div>
+                    <h4 className="font-bold text-[#7C3131] text-sm">Telp.</h4>
+                    <p className="text-[#552323] text-xs 2xl:text-sm font-medium">
+                      08115405834{" "}
+                      <span className="text-[#7C3131]/80 text-xs">
+                        (Hanya SMS)
+                      </span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        </FadeIn>
       </div>
     </section>
   );

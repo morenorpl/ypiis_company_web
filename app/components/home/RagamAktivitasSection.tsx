@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
+import FadeIn from "../animation/FadeIn";
 
 interface ActivityItem {
   id: string;
@@ -172,15 +173,32 @@ export default function RagamAktivitasSection() {
     <section className="py-6 bg-[#FAF8F5] relative overflow-hidden">
       {/* Header Container */}
       <div className="max-w-5xl 2xl:max-w-7xl mx-auto text-center px-4 mb-12">
-        <h2 className="text-4xl 2xl:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
-          RAGAM AKTIVITAS UNTUK MENGEMBANGKAN MINAT DAN BAKAT PELAJAR
-        </h2>
-        <p className="text-[#1B1B1B] text-base 2xl:text-lg font-medium leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">
-          Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas.
-          Melalui berbagai program intrakurikuler dan ekstrakurikuler, kami
-          memfasilitasi siswa untuk mengeksplorasi minat, mengasah bakat, dan
-          membangun karakter pemimpin masa depan yang berwawasan luas.
-        </p>
+        <FadeIn delay={0.2} duration={1} y={50} once={true}>
+          <h2 className="text-4xl 2xl:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
+            RAGAM AKTIVITAS UNTUK MENGEMBANGKAN MINAT DAN BAKAT PELAJAR
+          </h2>
+        </FadeIn>
+        <FadeIn delay={0.5} duration={1} y={50} once={true}>
+          <p className="text-[#1B1B1B] text-base 2xl:text-lg font-medium leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">
+            Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas .
+            Melalui berbagai{" "}
+            <span className="font-bold text-[#937A25]">
+              program intrakurikuler
+            </span>{" "}
+            dan{" "}
+            <span className="font-bold text-[#937A25]">ekstrakurikuler</span> ,
+            kami memfasilitasi siswa untuk{" "}
+            <span className="font-bold text-[#937A25]">
+              mengeksplorasi minat
+            </span>{" "}
+            , <span className="font-bold text-[#937A25]">mengasah bakat</span> ,
+            dan{" "}
+            <span className="font-bold text-[#937A25]">
+              membangun karakter pemimpin masa depan
+            </span>{" "}
+            yang berwawasan luas.
+          </p>
+        </FadeIn>
       </div>
 
       {/* Carousel Wrapper with Floating Navigation Arrows */}

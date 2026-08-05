@@ -15,8 +15,8 @@ const redHatDisplay = Red_Hat_Display({
   display: "swap",
 });
 export const metadata: Metadata = {
-  title: "test",
-  description: "School platform homepage.",
+  title: "Yayasan Pendidikan Islam Imam Syafi’i",
+  description: "YPIIS homepage.",
 };
 
 export default function RootLayout({

@@ -1,152 +1,153 @@
 "use client";
 
-import Link from "next/link";
-import { FaInstagram, FaFacebook } from "react-icons/fa";
-import { IoIosMail } from "react-icons/io";
 import Image from "next/image";
+import Link from "next/link";
+import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
+import { FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
+import FadeIn from "./animation/FadeIn";
 
 export default function Footer() {
   return (
-    <footer className="w-full bg-[#7D2828] text-white">
-      {/* 1. Top Decorative Pattern Bar */}
-      <div className="w-full h-24 bg-[#7D2828] relative overflow-hidden flex justify-center items-center">
-        {/* SVG Geometric Pattern matching your design */}
+    <footer className="w-full">
+      {/* 1. Hero / CTA Section */}
+      <div className="relative w-full h-[600px] 2xl:h-[700px] flex flex-col items-center justify-center overflow-hidden">
+        {/* Background Image - Replace with your own image path */}
         <Image
-          src="/footer-top-border-art-3.svg"
-          alt="Decorative Pattern"
+          src="/gedung-fasilitas-dummy.png"
+          alt="YPIIS Background"
           fill
-          className="object-cover object-right opacity-100"
+          className="object-cover"
+          priority
         />
+
+        {/* Dark Overlay for Content Readability */}
+        <div className="absolute inset-0 bg-black/40" />
+
+        {/* Centered Overlay Content */}
+        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+          {/* Giant Bold Title */}
+          <FadeIn delay={0} duration={1} y={-50} once={true}>
+            <h1 className="text-9xl 2xl:text-9xl font-black text-white uppercase tracking-wider select-none mb-6">
+              ADMISSION
+            </h1>
+          </FadeIn>
+
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-4">
+            {/* Daftar Button */}
+            <FadeIn delay={0.8} duration={1} y={50} once={true}>
+              <Link
+                href={"#"}
+                className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 [--hover-bg:#7D2828]
+                  bg-[#1B1B1B] text-white text-base 2xl:text-lg border border-[#A2A2A2] font-medium px-6 py-2.5 2xl:px-6 2xl:py-2.5 rounded-xs"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span>Daftar</span>
+              </Link>
+            </FadeIn>
+
+            {/* Donasi Button */}
+            <FadeIn delay={0.9} duration={1} y={50} once={true}>
+              <Link
+                href={"#"}
+                className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 [--hover-bg:#7D2828]
+                  bg-[#1B1B1B] text-white text-base 2xl:text-lg border border-[#A2A2A2] font-medium px-6 py-2.5 2xl:px-6 2xl:py-2.5 rounded-xs"
+              >
+                <svg
+                  className="w-4 h-4"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2.5}
+                    d="M9 5l7 7-7 7"
+                  />
+                </svg>
+                <span>Donasi</span>
+              </Link>
+            </FadeIn>
+          </div>
+        </div>
       </div>
 
-      {/* 2. Main Content Container */}
-      <div className="max-w-6xl mx-auto px-6 py-18 grid grid-cols-1 md:grid-cols-3 gap-40 items-center text-center">
-        {/* Left Column Navigation */}
-        <div className="flex flex-col space-y-4">
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Social
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            FAQs
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Hubungi Kami
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Donasi
-          </Link>
-        </div>
-
-        {/* Center Column - Logo & Social Icons */}
-        <div className="flex flex-col items-center justify-center space-y-4">
-          {/* Logo Placeholder - Replace src with your actual logo asset */}
-          <div className="w-24 h-24 relative flex items-center justify-center">
-            <Image
-              className="w-24 h-24 max-w-full max-h-full object-contain brightness-100"
-              src="/YPIIS logo white.svg"
-              alt="YPIIS Logo"
-              width={100}
-              height={100}
-            />
+      {/* 2. Bottom White Bar (Contact & Social Links) */}
+      <div className="w-full bg-white border-t border-gray-200 py-4 px-4 sm:px-8">
+        <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
+          {/* Campus Details & Address */}
+          <div className="text-xs sm:text-sm text-gray-700 flex flex-wrap items-center justify-center lg:justify-start gap-1 font-medium">
+            <span className="text-[#8A3635] font-bold">(+62) 811-540-5834</span>
+            <span className="text-gray-400 font-normal">|</span>
+            <span className="font-bold text-gray-900">Main Office</span>
+            <span>- Jl. Pulau Panjang Gg. Karomah No.RT 23, Berau</span>
+            <span className="text-gray-400 font-normal hidden sm:inline">
+              |
+            </span>
+            <span className="font-bold text-gray-900">Made by YPIIS </span>
+            <span>Copyright © 2026. All Rights Reserved.</span>
           </div>
 
-          <h2 className="text-xl md:text-2xl font-semibold leading-tight max-w-xs">
-            Yayasan Pendidikan Islam Imam Syafi’i
-          </h2>
-
-          {/* Social Icons */}
-          <div className="flex items-center space-x-4 pt-2">
+          {/* Social Media Circular Buttons */}
+          <div className="flex items-center gap-2">
+            {/* YouTube */}
             <Link
               href="#"
-              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
-              aria-label="Instagram"
+              className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center hover:bg-[#1B1B1B] transition-all duration-300"
+              aria-label="YouTube"
             >
-              <FaInstagram className="w-5 h-5" />
+              <FaYoutube className="w-4 h-4" />
             </Link>
+
+            {/* LinkedIn */}
             <Link
               href="#"
-              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
+              className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center hover:bg-[#1B1B1B] transition-all duration-300"
+              aria-label="LinkedIn"
+            >
+              <FaLinkedinIn className="w-4 h-4" />
+            </Link>
+
+            {/* Facebook */}
+            <Link
+              href="#"
+              className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center hover:bg-[#1B1B1B] transition-all duration-300"
               aria-label="Facebook"
             >
-              <FaFacebook className="w-5 h-5" />
+              <FaFacebookF className="w-4 h-4" />
             </Link>
+
+            {/* X / Twitter */}
             <Link
               href="#"
-              className="p-1 hover:text-[#BF9F2A] transition-all duration-400"
-              aria-label="Email"
+              className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center font-bold text-xs hover:bg-[#1B1B1B] transition-all duration-300"
+              aria-label="X"
             >
-              <IoIosMail className="w-5 h-5" />
+              X
+            </Link>
+
+            {/* Instagram */}
+            <Link
+              href="#"
+              className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center hover:bg-[#1B1B1B] transition-all duration-300"
+              aria-label="Instagram"
+            >
+              <FaInstagram className="w-4 h-4" />
             </Link>
           </div>
-        </div>
-
-        {/* Right Column Navigation */}
-        <div className="flex flex-col space-y-4">
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Tentang Kami
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Akademik
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Pendaftaran
-          </Link>
-          <div className="w-full border-t border-white/30" />
-
-          <Link
-            href="#"
-            className="text-lg font-medium hover:text-[#BF9F2A] transition-all duration-400"
-          >
-            Berita
-          </Link>
-        </div>
-      </div>
-
-      {/* 3. Bottom Mustard Yellow Copyright Bar */}
-      <div className="w-full bg-[#B89C13] py-3 text-center text-xs md:text-sm font-bold text-[#6D570F]">
-        <div className="max-w-6xl mx-auto px-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1">
-          <span>© 2026 YPIIS</span>
-          <span>|</span>
-          <span>All Rights Reserved</span>
-          <span>|</span>
-          <Link href="#" className="hover:underline">
-            Privacy Policy
-          </Link>
-          <span>|</span>
-          <Link href="#" className="hover:underline">
-            Terms & Conditions
-          </Link>
         </div>
       </div>
     </footer>

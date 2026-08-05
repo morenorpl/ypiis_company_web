@@ -50,9 +50,9 @@ export default function HeroSection() {
         </div>
       </div>
 
-      {/* 2. HERO IMAGE BANNER WITH OVERLAY TEXT */}
+      {/* 2. HERO IMAGE BANNER */}
       <FadeIn
-        className="relative w-full h-[280px] sm:h-[380px] md:h-[480px] rounded-2xl overflow-hidden shadow-md"
+        className="relative w-full h-120 rounded-2xl overflow-hidden shadow-md"
         delay={0.6}
         duration={1}
         y={50}

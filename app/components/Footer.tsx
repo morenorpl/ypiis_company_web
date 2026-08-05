@@ -28,13 +28,13 @@ export default function Footer() {
           {/* Giant Bold Title */}
           <FadeIn delay={0} duration={1} y={-50} once={true}>
             <h1 className="text-9xl 2xl:text-9xl font-black text-white uppercase tracking-wider select-none mb-6">
-              ADMISSION
+              PENDAFTARAN
             </h1>
           </FadeIn>
 
           {/* Action Buttons */}
           <div className="flex flex-wrap items-center justify-center gap-4">
-            {/* Daftar Button */}
+            {/* Isi Formulir Button */}
             <FadeIn delay={0.8} duration={1} y={50} once={true}>
               <Link
                 href={"#"}
@@ -54,11 +54,11 @@ export default function Footer() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                <span>Daftar</span>
+                <span>Isi Formulir</span>
               </Link>
             </FadeIn>
 
-            {/* Donasi Button */}
+            {/* Konsultasi Button */}
             <FadeIn delay={0.9} duration={1} y={50} once={true}>
               <Link
                 href={"#"}
@@ -78,7 +78,7 @@ export default function Footer() {
                     d="M9 5l7 7-7 7"
                   />
                 </svg>
-                <span>Donasi</span>
+                <span>Konsultasi</span>
               </Link>
             </FadeIn>
           </div>

@@ -172,28 +172,36 @@ export default function RagamAktivitasSection() {
   return (
     <section className="py-6 bg-[#FAF8F5] relative overflow-hidden">
       {/* Header Container */}
-      <div className="max-w-5xl 2xl:max-w-7xl mx-auto text-center px-4 mb-12">
+      <div className="max-w-5xl 2xl:max-w-7xl mx-auto items-center text-center px-4 mb-12">
         <FadeIn delay={0.2} duration={1} y={50} once={true}>
-          <h2 className="text-4xl 2xl:text-5xl font-black text-[#8A3635] uppercase tracking-wide mb-8">
-            RAGAM AKTIVITAS UNTUK MENGEMBANGKAN MINAT DAN BAKAT PELAJAR
+          <h2 className="text-5xl 2xl:text-6xl font-black uppercase text-[#8A3635] leading-tight tracking-tight max-w-2xl 2xl:max-w-4xl mx-auto mb-6">
+            Ragam Aktivitas & Kegiatan Siswa YPIIS
           </h2>
         </FadeIn>
+
+        <FadeIn delay={0.35} duration={0.8} y={20} once={true}>
+          <div className="w-16 h-1 bg-[#937A25] rounded-full mb-8 mx-auto" />
+        </FadeIn>
+
         <FadeIn delay={0.5} duration={1} y={50} once={true}>
-          <p className="text-[#1B1B1B] text-base 2xl:text-lg font-medium leading-relaxed max-w-4xl 2xl:max-w-5xl mx-auto">
-            Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas .
+          <p className="text-[#1B1B1B] text-base sm:text-lg 2xl:text-xl font-normal leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto">
+            Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas.
             Melalui berbagai{" "}
-            <span className="font-bold text-[#937A25]">
+            <span className="font-semibold text-[#937A25]   ">
               program intrakurikuler
             </span>{" "}
             dan{" "}
-            <span className="font-bold text-[#937A25]">ekstrakurikuler</span> ,
-            kami memfasilitasi siswa untuk{" "}
-            <span className="font-bold text-[#937A25]">
+            <span className="font-semibold text-[#937A25] ">
+              ekstrakurikuler
+            </span>
+            , kami memfasilitasi siswa untuk{" "}
+            <span className="font-semibold text-[#937A25]">
               mengeksplorasi minat
-            </span>{" "}
-            , <span className="font-bold text-[#937A25]">mengasah bakat</span> ,
-            dan{" "}
-            <span className="font-bold text-[#937A25]">
+            </span>
+            ,{" "}
+            <span className="font-semibold text-[#937A25]">mengasah bakat</span>
+            , dan{" "}
+            <span className="font-semibold text-[#937A25]">
               membangun karakter pemimpin masa depan
             </span>{" "}
             yang berwawasan luas.

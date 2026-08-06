@@ -2,33 +2,33 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import FadeIn from "../animation/FadeIn";
+import FadeIn from "../../components/animation/FadeIn";
 
 interface DonasiBantuSectionProps {
   buttonHref?: string;
-  patternImageSrc?: string; // Optional: supply your SVG/PNG pattern asset here
+  patternImageSrc?: string;
 }
 
 export default function DonasiBantuSection({
   buttonHref = "/donasi",
-  patternImageSrc = "/donasi-card-art.svg", // Replace with your actual pattern image path if available
+  patternImageSrc = "/donasi-card-art.svg",
 }: DonasiBantuSectionProps) {
   return (
-    <section className="py-6 bg-[#FAF8F5]">
+    <section className="py-6 lg:py-12 bg-[#faf8f500]">
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Maroon Card Container */}
         <FadeIn delay={0.2} duration={1} y={50} once={true}>
-          <div className="relative bg-[#7C3131] rounded-2xl overflow-hidden text-white flex flex-col md:flex-row items-stretch justify-between min-h-[320px] shadow-lg">
+          <div className="relative bg-[#7C3131] rounded-3xl overflow-hidden text-white flex flex-col md:flex-row items-stretch justify-between shadow-lg">
             {/* Left Content Area */}
-            <div className="flex-1 p-8 2xl:p-12 z-10 flex flex-col justify-between max-w-6/10 2xl:max-w-7/10">
+            <div className="p-6 sm:p-8 2xl:p-12 z-10 flex flex-col justify-between w-full md:w-[65%] 2xl:w-[70%]">
               <div>
                 {/* Title */}
-                <h2 className=" text-5xl 2xl:text-6xl font-extrabold tracking-tight mb-14">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl 2xl:text-6xl font-extrabold tracking-tight mb-4 sm:mb-6 lg:mb-14 leading-tight">
                   AYO Bantu Mereka...
                 </h2>
 
                 {/* Description Paragraph with Gold Highlighted Text */}
-                <p className="text-white/90 font-medium text-base 2xl:text-xl leading-relaxed mb-8">
+                <p className="text-white/90 font-medium text-sm sm:text-base 2xl:text-xl leading-relaxed mb-4 sm:mb-6 lg:mb-8">
                   Untuk meraih mimpi &amp; pendidikan yang layak.{" "}
                   <span className="text-[#E0A82E] font-semibold">
                     Dukungan Anda adalah jembatan
@@ -40,7 +40,7 @@ export default function DonasiBantuSection({
                 </p>
 
                 {/* Disclaimer / Subtext */}
-                <p className="text-white/70 italic text-xs mb-15 2xl:mb-25">
+                <p className="text-white/70 italic text-xs mb-6 sm:mb-8 lg:mb-15 2xl:mb-25">
                   *Seluruh donasi akan dialokasikan untuk pengembangan fasilitas
                   semua unit pendidikan
                 </p>
@@ -50,12 +50,11 @@ export default function DonasiBantuSection({
               <div>
                 <Link
                   href={buttonHref}
-                  className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 group
-                  bg-[#F8F7F3] text-[#8A3635] text-lg font-base px-16 py-3 2xl:px-20 2xl:py-4 rounded-sm hover:text-[#F8F7F3]"
+                  className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center sm:justify-start gap-3 group bg-[#F8F7F3] text-[#8A3635] text-base sm:text-lg font-medium w-full sm:w-auto px-6 sm:px-12 lg:px-16 py-3 2xl:px-20 2xl:py-4 rounded-lg hover:text-[#F8F7F3] transition-colors"
                 >
                   {/* Right Caret Icon */}
                   <svg
-                    className="w-4 h-4 text-[#8A3635] transform transition-transform group-hover:text-[#F8F7F3]"
+                    className="w-4 h-4 text-[#8A3635] transform transition-transform group-hover:text-[#F8F7F3] shrink-0"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -72,18 +71,21 @@ export default function DonasiBantuSection({
               </div>
             </div>
 
-            {/* Right Decorative Pattern Area */}
-            <div className="w-full md:w-1/4 min-h-[160px] md:min-h-xl relative overflow-hidden shrink-0">
-              {/* If using an image file for the pattern */}
+            {/* Bottom (Mobile/Tablet) & Right (Desktop) Decorative Pattern Area */}
+            <div className="w-full md:w-[35%] 2xl:w-[30%] h-40 sm:h-48 md:h-auto relative overflow-hidden shrink-0">
               {patternImageSrc ? (
-                <Image
-                  src={patternImageSrc}
-                  alt="Decorative Pattern"
-                  fill
-                  className="object-cover object-right opacity-90"
-                />
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="relative w-full h-full md:rotate-0 -rotate-90 scale-330 md:scale-100 transition-all duration-300">
+                    <Image
+                      src={patternImageSrc}
+                      alt="Decorative Pattern"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 35vw"
+                      className="object-contain opacity-90 object-center md:object-right"
+                    />
+                  </div>
+                </div>
               ) : (
-                /* Inline SVG Fallback Pattern if no image file exists yet */
                 <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#E89CA3_1px,transparent_1px)] [background-size:16px_16px]" />
               )}
             </div>

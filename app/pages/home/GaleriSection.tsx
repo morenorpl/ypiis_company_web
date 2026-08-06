@@ -110,8 +110,8 @@ const ROW_3: GalleryItem[] = [
 
 export default function GaleriSection() {
   return (
-    <section className="py-6 bg-[#FAF8F5] overflow-hidden">
-      <div className="flex flex-col gap-6 w-full">
+    <section className="py-6 lg:py-12 bg-[#faf8f500] overflow-hidden">
+      <div className="flex flex-col gap-4 sm:gap-6 w-full">
         {/* Row 1: Left Infinite Scroll */}
         <ScrollingRow items={ROW_1} direction="left" speed="35s" />
 
@@ -134,16 +134,16 @@ function ScrollingRow({
   direction?: "left" | "right";
   speed?: string;
 }) {
-  // Duplicate array items so the seamless scroll never gaps
+  // Multiply items to ensure enough width for seamless scrolling across wide displays
   const doubleItems = [...items, ...items, ...items];
 
   const animationName =
     direction === "left" ? "animate-marquee-left" : "animate-marquee-right";
 
   return (
-    <div className="relative w-full overflow-hidden flex">
+    <div className="relative w-full overflow-hidden flex select-none">
       <div
-        className={`flex gap-4 shrink-0 hover:[animation-play-state:paused] ${animationName}`}
+        className={`flex gap-3 sm:gap-4 lg:gap-6 shrink-0 hover:[animation-play-state:paused] ${animationName}`}
         style={{ animationDuration: speed }}
       >
         {doubleItems.map((item, index) => (
@@ -156,13 +156,14 @@ function ScrollingRow({
 
 function GalleryCard({ item }: { item: GalleryItem }) {
   return (
-    <div className="group relative w-[280px] sm:w-[320px] h-44 sm:h-52 bg-gray-200 rounded-sm overflow-hidden shadow-sm cursor-pointer shrink-0 border-2 border-[#A2A2A2]">
+    <div className="group relative w-[220px] sm:w-[280px] lg:w-[320px] 2xl:w-[380px] h-36 sm:h-44 lg:h-52 2xl:h-64 bg-gray-200 rounded-xl overflow-hidden shadow-sm cursor-pointer shrink-0 border-2 border-[#A2A2A2]">
       {/* Image */}
       {item.imageSrc ? (
         <Image
           src={item.imageSrc}
           alt={item.title}
           fill
+          sizes="(max-width: 640px) 220px, (max-width: 1024px) 280px, (max-width: 1536px) 320px, 380px"
           className="object-cover group-hover:scale-110 transition-transform duration-500 ease-out"
         />
       ) : (
@@ -170,14 +171,17 @@ function GalleryCard({ item }: { item: GalleryItem }) {
       )}
 
       {/* Dark Overlay on Hover */}
-      <div className="absolute inset-0 bg-linear-to-t from-[#772524]/80 via-[#772524]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#772524]/80 via-[#772524]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out" />
 
-      {/* Hover Text Content */}
-      <div className="absolute inset-0 p-6 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-300 ease-out z-10">
-        <h3 className="text-xl font-bold text-white tracking-wide mb-1">
+      {/* Hover Text Content Wrapper */}
+      <div className="absolute inset-0 p-4 sm:p-6 flex flex-col justify-center items-center text-center opacity-0 group-hover:opacity-100 transform translate-y-3 group-hover:translate-y-0 transition-all duration-300 ease-out z-10 w-full min-w-0">
+        {/* Title: Truncated to 2 lines max & forced line-wrapping */}
+        <h3 className="text-base sm:text-lg lg:text-xl 2xl:text-2xl font-bold text-white tracking-wide mb-1 line-clamp-2 break-words w-full">
           {item.title}
         </h3>
-        <p className="text-xs sm:text-sm text-gray-200 font-medium">
+
+        {/* Description: Truncated to 2 lines max & protected from pushing layout */}
+        <p className="text-xs sm:text-sm 2xl:text-base text-gray-200 font-medium line-clamp-2 break-words w-full">
           {item.description}
         </p>
       </div>

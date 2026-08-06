@@ -1,11 +1,9 @@
 "use client";
 
-import { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import Link from "next/link";
+import { useRef } from "react";
 import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
-import FadeIn from "../animation/FadeIn";
+import FadeIn from "../../components/animation/FadeIn";
 
 interface ActivityItem {
   id: string;
@@ -22,7 +20,6 @@ interface ColumnPair {
   bottom: ActivityItem;
 }
 
-// 1. Data organized into column pairs (top box & bottom box per column)
 const ACTIVITY_COLUMNS: ColumnPair[] = [
   {
     id: "col-1",
@@ -31,7 +28,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-1.png", // Replace with your image path
+      imageSrc: "/ragam-aktivitas-dummy-1.png",
       theme: "image",
     },
     bottom: {
@@ -39,7 +36,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "RIHLAH",
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis.",
+        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
       imageSrc: "",
       theme: "gold",
     },
@@ -51,7 +48,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "AL-QUR'AN",
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis.",
+        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
       imageSrc: "",
       theme: "maroon",
     },
@@ -79,7 +76,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "KUNJUNGAN",
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis.",
+        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
       imageSrc: "",
       theme: "maroon",
     },
@@ -91,7 +88,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "EXTERNAL",
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur lobortis.",
+        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
       imageSrc: "",
       theme: "gold",
     },
@@ -117,8 +114,9 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     bottom: {
       id: "act-10",
       category: "KUNJUNGAN",
-      title: "Judul 5",
-      description: "...",
+      title: "Kunjungan Edukatif Santri",
+      description:
+        "Kegiatan pembelajaran di luar kelas untuk memperluas wawasan para santri.",
       imageSrc: "",
       theme: "gold",
     },
@@ -128,8 +126,9 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     top: {
       id: "act-11",
       category: "RIHLAH",
-      title: "Judul 6",
-      description: "...",
+      title: "Rihlah Alam & Karakter",
+      description:
+        "Menanamkan nilai kemandirian dan kebersamaan melalui kegiatan di alam terbuka.",
       imageSrc: "",
       theme: "maroon",
     },
@@ -142,7 +141,6 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       theme: "image",
     },
   },
-  // Add more columns as needed
 ];
 
 export default function RagamAktivitasSection() {
@@ -152,46 +150,56 @@ export default function RagamAktivitasSection() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    // Get width of first item
-    const firstChild = container.firstElementChild as HTMLElement | null;
-    const itemWidth = firstChild ? firstChild.offsetWidth : 385;
+    const firstChild = container.querySelector(
+      ".activity-col",
+    ) as HTMLElement | null;
+    const itemWidth = firstChild
+      ? firstChild.offsetWidth
+      : container.clientWidth / 2;
 
-    // Calculate current scroll position aligned to columns
+    const maxScroll = container.scrollWidth - container.clientWidth;
     const currentScroll = container.scrollLeft;
-    const targetScroll =
+
+    let targetScroll =
       direction === "left"
         ? currentScroll - itemWidth
         : currentScroll + itemWidth;
 
-    // Direct position assignment bypasses scroll-snap conflicts
+    if (targetScroll <= 0) {
+      targetScroll = 0;
+    } else if (targetScroll >= maxScroll - 10) {
+      targetScroll = maxScroll;
+    }
+
     container.scrollTo({
       left: targetScroll,
       behavior: "smooth",
     });
   };
+
   return (
-    <section className="py-6 bg-[#FAF8F5] relative overflow-hidden">
-      {/* Header Container */}
-      <div className="max-w-5xl 2xl:max-w-7xl mx-auto items-center text-center px-4 mb-12">
-        <FadeIn delay={0.2} duration={1} y={50} once={true}>
-          <h2 className="text-5xl 2xl:text-6xl font-black uppercase text-[#8A3635] leading-tight tracking-tight max-w-2xl 2xl:max-w-4xl mx-auto mb-6">
-            Ragam Aktivitas & Kegiatan Siswa YPIIS
+    <section className="py-12 lg:py-20 bg-[#faf8f500] relative overflow-hidden">
+      {/* 1. HEADER CONTAINER */}
+      <div className="max-w-4xl 2xl:max-w-6xl mx-auto text-center px-4 sm:px-6 mb-10 lg:mb-14">
+        <FadeIn delay={0.2} duration={1} y={40} once={true}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-black uppercase text-[#8A3635] leading-tight tracking-tight max-w-3xl 2xl:max-w-5xl mx-auto mb-4">
+            Ragam Aktivitas &amp; Kegiatan Siswa Yayasan
           </h2>
         </FadeIn>
 
         <FadeIn delay={0.35} duration={0.8} y={20} once={true}>
-          <div className="w-16 h-1 bg-[#937A25] rounded-full mb-8 mx-auto" />
+          <div className="w-16 h-1 bg-[#937A25] rounded-full mb-6 mx-auto" />
         </FadeIn>
 
-        <FadeIn delay={0.5} duration={1} y={50} once={true}>
-          <p className="text-[#1B1B1B] text-base sm:text-lg 2xl:text-xl font-normal leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto">
+        <FadeIn delay={0.5} duration={1} y={30} once={true}>
+          <p className="text-[#1B1B1B] text-sm sm:text-base md:text-lg 2xl:text-xl font-normal leading-relaxed max-w-2xl 2xl:max-w-4xl mx-auto">
             Kami percaya bahwa belajar tidak terbatas di dalam ruang kelas.
             Melalui berbagai{" "}
-            <span className="font-semibold text-[#937A25]   ">
+            <span className="font-semibold text-[#937A25]">
               program intrakurikuler
             </span>{" "}
             dan{" "}
-            <span className="font-semibold text-[#937A25] ">
+            <span className="font-semibold text-[#937A25]">
               ekstrakurikuler
             </span>
             , kami memfasilitasi siswa untuk{" "}
@@ -209,14 +217,14 @@ export default function RagamAktivitasSection() {
         </FadeIn>
       </div>
 
-      {/* Carousel Wrapper with Floating Navigation Arrows */}
+      {/* 2. CAROUSEL WRAPPER WITH NAVIGATION ARROWS */}
       <div className="relative mx-auto group">
         {/* Left Arrow Button */}
         <button
           onClick={() => handleScroll("left")}
           aria-label="Scroll left"
           type="button"
-          className="absolute left-2 top-1/2 z-30 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition-colors shadow-lg"
+          className="hidden sm:flex absolute left-4 lg:left-8 top-1/2 z-30 -translate-y-1/2 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-black/60 text-white items-center justify-center hover:bg-black/80 transition-colors shadow-lg active:scale-95"
         >
           <svg
             className="w-6 h-6"
@@ -238,7 +246,7 @@ export default function RagamAktivitasSection() {
           onClick={() => handleScroll("right")}
           type="button"
           aria-label="Scroll right"
-          className="absolute right-2 top-1/2 z-30 -translate-y-1/2 w-12 h-12 rounded-full bg-black/60 text-white flex items-center justify-center hover:bg-black/80 transition-colors shadow-lg"
+          className="hidden sm:flex absolute right-4 lg:right-8 top-1/2 z-30 -translate-y-1/2 w-11 h-11 lg:w-12 lg:h-12 rounded-full bg-black/60 text-white items-center justify-center hover:bg-black/80 transition-colors shadow-lg active:scale-95"
         >
           <svg
             className="w-6 h-6"
@@ -255,21 +263,26 @@ export default function RagamAktivitasSection() {
           </svg>
         </button>
 
-        {/* Scrollable Container (CSS Snap Enabled) */}
+        {/* Scrollable Horizontal Container */}
         <div
           ref={scrollContainerRef}
-          className="flex gap-0 overflow-x-auto snap-x scrollbar-hide"
+          className="flex overflow-x-auto snap-x snap-mandatory scrollbar-none w-full"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
-          {ACTIVITY_COLUMNS.map((col) => (
-            <div
-              key={col.id}
-              className="flex-none  w-[320px] 2xl:w-96.25 flex flex-col gap-0 snap-start shrink-0"
-            >
-              <CardBox item={col.top} />
-              <CardBox item={col.bottom} />
-            </div>
-          ))}
+          {ACTIVITY_COLUMNS.map((col, index) => {
+            const isLast = index === ACTIVITY_COLUMNS.length - 1;
+            return (
+              <div
+                key={col.id}
+                className={`activity-col flex-none w-1/2 lg:w-1/3 2xl:w-1/4 flex flex-col shrink-0 ${
+                  isLast ? "snap-end" : "snap-start"
+                }`}
+              >
+                <CardBox item={col.top} />
+                <CardBox item={col.bottom} />
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
@@ -279,11 +292,12 @@ export default function RagamAktivitasSection() {
 function CardBox({ item }: { item: ActivityItem }) {
   if (item.theme === "image") {
     return (
-      <div className="relative h-80 2xl:h-96 w-full overflow-hidden shadow-sm group/card">
+      <div className="relative h-72 sm:h-80 2xl:h-96 w-full overflow-hidden group/card">
         <Image
           src={item.imageSrc}
-          alt="Aktivitas"
+          alt="Aktivitas Santri YPIIS"
           fill
+          sizes="(max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
           className="object-cover transition-transform duration-500 group-hover/card:scale-105"
         />
       </div>
@@ -294,43 +308,40 @@ function CardBox({ item }: { item: ActivityItem }) {
 
   const buttonBgColor =
     item.theme === "maroon"
-      ? "bg-[#582121] hover:bg-[#431919]"
-      : "bg-[#8A7418] hover:bg-[#6D5B12]";
-
-  const buttonTextColors =
-    item.theme === "maroon" ? "text-[#ffffff] " : "text-[#FFF7DA] ";
+      ? "bg-[#582121] group-hover/card:bg-[#431919]"
+      : "bg-[#8A7418] group-hover/card:bg-[#6D5B12]";
 
   return (
     <div
-      className={`h-80 2xl:h-96 w-full ${bgColor} ${buttonTextColors} p-6 flex flex-col justify-center shadow-sm relative group/card`}
+      className={`h-72 sm:h-80 2xl:h-96 w-full ${bgColor} text-white p-6 flex flex-col justify-between relative group/card cursor-pointer transition-all duration-300`}
     >
-      <div>
+      <div className="flex flex-col items-center justify-center text-center my-auto">
         {/* Category Header with lines */}
-        <div className="flex items-center justify-center gap-6 mb-6">
-          <span className="w-4 h-px bg-white/60" />
-          <span className="text-xs 2xl:text-sm font-extrabold uppercase tracking-wider text-white/90">
+        <div className="flex items-center justify-center gap-3 mb-4 w-full">
+          <span className="w-4 h-px bg-white/50" />
+          <span className="text-xs 2xl:text-sm font-extrabold uppercase tracking-widest text-white/90">
             {item.category}
           </span>
-          <span className="w-4 h-px bg-white/60" />
+          <span className="w-4 h-px bg-white/50" />
         </div>
 
         {/* Title */}
-        <h3 className="text-2xl 2xl:text-3xl font-bold text-center mb-3 leading-snug">
+        <h3 className="text-xl sm:text-2xl 2xl:text-3xl font-bold mb-3 leading-snug">
           {item.title}
         </h3>
 
         {/* Description */}
-        <p className="text-xs 2xl:text-sm text-center text-white/80 leading-relaxed max-w-xs mx-auto mb-10">
+        <p className="text-xs sm:text-sm text-white/80 leading-relaxed max-w-xs mx-auto line-clamp-3">
           {item.description}
         </p>
       </div>
 
-      {/* Circle Icon Button at bottom center */}
+      {/* Circle Icon Button at Bottom Center */}
       <div className="flex justify-center pt-2">
         <div
-          className={`w-10 h-10 rounded-full ${buttonBgColor} flex items-center justify-center transition-colors`}
+          className={`w-10 h-10 rounded-full ${buttonBgColor} text-white flex items-center justify-center transition-transform duration-300 group-hover/card:scale-110`}
         >
-          <FiArrowUpRight size={25} />
+          <FiArrowUpRight size={22} />
         </div>
       </div>
     </div>

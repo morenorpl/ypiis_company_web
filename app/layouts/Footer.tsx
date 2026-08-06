@@ -4,14 +4,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FaFacebookF, FaXTwitter } from "react-icons/fa6";
 import { FaInstagram, FaYoutube, FaLinkedinIn } from "react-icons/fa";
-import FadeIn from "./animation/FadeIn";
+import FadeIn from "../components/animation/FadeIn";
 
 export default function Footer() {
   return (
     <footer className="w-full">
       {/* 1. Hero / CTA Section */}
-      <div className="relative w-full h-[600px] 2xl:h-[700px] flex flex-col items-center justify-center overflow-hidden">
-        {/* Background Image - Replace with your own image path */}
+      <div className="relative w-full min-h-[450px] sm:min-h-[550px] lg:h-[600px] 2xl:h-[700px] flex flex-col items-center justify-center overflow-hidden py-12 px-4">
+        {/* Background Image */}
         <Image
           src="/gedung-fasilitas-dummy.png"
           alt="YPIIS Background"
@@ -24,25 +24,31 @@ export default function Footer() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* Centered Overlay Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
+        <div className="relative z-10 flex flex-col items-center justify-center text-center max-w-5xl mx-auto w-full">
           {/* Giant Bold Title */}
-          <FadeIn delay={0} duration={1} y={-50} once={true}>
-            <h1 className="text-9xl 2xl:text-9xl font-black text-white uppercase tracking-wider select-none mb-6">
+          <FadeIn delay={0} duration={1} y={-30} once={true}>
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl 2xl:text-9xl font-black text-white uppercase tracking-wider select-none mb-6 sm:mb-8 leading-none">
               PENDAFTARAN
             </h1>
           </FadeIn>
 
           {/* Action Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full sm:w-auto">
             {/* Isi Formulir Button */}
-            <FadeIn delay={0.8} duration={1} y={50} once={true}>
+            <FadeIn
+              delay={0.3}
+              duration={1}
+              y={30}
+              once={true}
+              className="w-full sm:w-auto"
+            >
               <Link
                 href={"#"}
-                className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 [--hover-bg:#7D2828]
-                  bg-[#1B1B1B] text-white text-base 2xl:text-lg border border-[#A2A2A2] font-medium px-6 py-2.5 2xl:px-6 2xl:py-2.5 rounded-xs"
+                className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center gap-3 [--hover-bg:#7D2828]
+                  bg-[#1B1B1B] text-white text-sm sm:text-base 2xl:text-lg border border-[#A2A2A2] font-medium w-full sm:w-auto px-6 py-3 rounded-lg transition-all"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -59,14 +65,20 @@ export default function Footer() {
             </FadeIn>
 
             {/* Konsultasi Button */}
-            <FadeIn delay={0.9} duration={1} y={50} once={true}>
+            <FadeIn
+              delay={0.4}
+              duration={1}
+              y={30}
+              once={true}
+              className="w-full sm:w-auto"
+            >
               <Link
                 href={"#"}
-                className="btn-expand-center relative overflow-hidden inline-flex items-center gap-3 [--hover-bg:#7D2828]
-                  bg-[#1B1B1B] text-white text-base 2xl:text-lg border border-[#A2A2A2] font-medium px-6 py-2.5 2xl:px-6 2xl:py-2.5 rounded-xs"
+                className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center gap-3 [--hover-bg:#7D2828]
+                  bg-[#1B1B1B] text-white text-sm sm:text-base 2xl:text-lg border border-[#A2A2A2] font-medium w-full sm:w-auto px-6 py-3 rounded-lg transition-all"
               >
                 <svg
-                  className="w-4 h-4"
+                  className="w-4 h-4 shrink-0"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -89,20 +101,33 @@ export default function Footer() {
       <div className="w-full bg-white border-t border-gray-200 py-4 px-4 sm:px-8">
         <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left">
           {/* Campus Details & Address */}
-          <div className="text-xs sm:text-sm text-gray-700 flex flex-wrap items-center justify-center lg:justify-start gap-1 font-medium">
-            <span className="text-[#8A3635] font-bold">(+62) 811-540-5834</span>
-            <span className="text-gray-400 font-normal">|</span>
-            <span className="font-bold text-gray-900">Main Office</span>
-            <span>- Jl. Pulau Panjang Gg. Karomah No.RT 23, Berau</span>
-            <span className="text-gray-400 font-normal hidden sm:inline">
+          <div className="text-xs sm:text-sm text-gray-700 flex flex-wrap items-center justify-center lg:justify-start gap-y-1.5 gap-x-2 font-medium">
+            <span className="text-[#8A3635] font-bold shrink-0">
+              (+62) 811-540-5834
+            </span>
+            <span className="text-gray-300 font-normal hidden sm:inline">
               |
             </span>
-            <span className="font-bold text-gray-900">Made by YPIIS </span>
-            <span>Copyright © 2026. All Rights Reserved.</span>
+
+            <span className="font-bold text-gray-900 shrink-0">
+              Main Office
+            </span>
+            <span className="text-gray-600">
+              - Jl. Pulau Panjang Gg. Karomah No.RT 23, Berau
+            </span>
+            <span className="text-gray-300 font-normal hidden md:inline">
+              |
+            </span>
+
+            <div className="w-full md:w-auto flex items-center justify-center gap-1.5 text-gray-500">
+              <span className="font-bold text-gray-900">Made by YPIIS</span>
+              <span>•</span>
+              <span>Copyright © 2026. All Rights Reserved.</span>
+            </div>
           </div>
 
           {/* Social Media Circular Buttons */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center justify-center gap-2 shrink-0">
             {/* YouTube */}
             <Link
               href="#"
@@ -136,7 +161,7 @@ export default function Footer() {
               className="w-8 h-8 rounded-full bg-[#8A3635] text-white flex items-center justify-center font-bold text-xs hover:bg-[#1B1B1B] transition-all duration-300"
               aria-label="X"
             >
-              X
+              <FaXTwitter className="w-3.5 h-3.5" />
             </Link>
 
             {/* Instagram */}

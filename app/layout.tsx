@@ -4,8 +4,8 @@ import { Red_Hat_Display, Inter } from "next/font/google";
 import "./globals.css";
 
 // Importing decomposed components
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Header from "./layouts/Header";
+import Footer from "./layouts/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 const redHatDisplay = Red_Hat_Display({
@@ -16,7 +16,8 @@ const redHatDisplay = Red_Hat_Display({
 });
 export const metadata: Metadata = {
   title: "Yayasan Pendidikan Islam Imam Syafi’i",
-  description: "YPIIS homepage.",
+  description:
+    "Yayasan Pendidikan Islam Imam Syafi’i company website homepage.",
 };
 
 export default function RootLayout({
@@ -31,7 +32,7 @@ export default function RootLayout({
         <Header />
 
         {/* MAIN CONTENT CONTAINER (The Page content goes here) */}
-        <main className=" flex-1 min-h-screen pt-20 bg-[#FAF8F5]">
+        <main className=" flex-1 min-h-screen pt-20 bg-[#faf8f500]">
           {/* pt-20 is for header clearance if fixed */}
           {children}
         </main>

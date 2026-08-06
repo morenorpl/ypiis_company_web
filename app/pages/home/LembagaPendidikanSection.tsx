@@ -391,7 +391,7 @@ export default function LembagaPendidikanSection() {
 
               {/* Title & Subtitle */}
               <h3 className="text-xl sm:text-2xl font-black text-[#1B1B1B] uppercase tracking-wide mb-2">
-                Pilih Jenjang {modalTarget.shortLabel}
+                Pilih Kategori {modalTarget.shortLabel}
               </h3>
               <p className="text-sm text-gray-600 mb-6">
                 Silakan pilih kategori sekolah yang ingin Anda lihat:
@@ -401,6 +401,7 @@ export default function LembagaPendidikanSection() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Link
                   href={modalTarget.genderHrefs?.putra || "#"}
+                  target="_blank"
                   onClick={() => setModalTarget(null)}
                   className="group flex flex-col items-center justify-center p-5 rounded-xl border-2 border-gray-100 hover:border-[#8A3635] bg-gray-50 hover:bg-[#8A3635]/5 transition-all duration-300"
                 >
@@ -429,6 +430,7 @@ export default function LembagaPendidikanSection() {
 
                 <Link
                   href={modalTarget.genderHrefs?.putri || "#"}
+                  target="_blank"
                   onClick={() => setModalTarget(null)}
                   className="group flex flex-col items-center justify-center p-5 rounded-xl border-2 border-gray-100 hover:border-[#8A3635] bg-gray-50 hover:bg-[#8A3635]/5 transition-all duration-300"
                 >

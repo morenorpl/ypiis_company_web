@@ -186,7 +186,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       fullDescription:
         "Program intensif bulan Ramadhan yang diisi dengan kajian kitab kuning, halaqah tahfizh, iktikaf, serta kegiatan bakti sosial pembagian sembako dan takjil gratis bagi masyarakat sekitar.",
       imageSrc: "/ragam-peskil.jpg",
-      additionalImages: ["/ragam-add-peskil1.jpg", "/ragam-add-peskil2.jpg"],
+      additionalImages: ["/ragam-add-peskil1.jpg", "/ragam-add-peskil2.jpeg"],
       theme: "maroon",
     },
   },

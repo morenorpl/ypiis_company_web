@@ -64,7 +64,7 @@ const ROW_2: GalleryItem[] = [
     id: "8",
     title: "Munaqosyah Ummi",
     description:
-      "ujian akhir kelulusan pembelajaran Al-Qur'an menggunakan metode Ummi",
+      "ujian akhir kelulusan pembelajaran Al-Qur'an menggunakan metode Ummi.",
     imageSrc: "/galeri-8.jpg",
   },
   {

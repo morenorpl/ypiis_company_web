@@ -16,8 +16,7 @@ const redHatDisplay = Red_Hat_Display({
 });
 export const metadata: Metadata = {
   title: "Yayasan Pendidikan Islam Imam Syafi’i",
-  description:
-    "Yayasan Pendidikan Islam Imam Syafi’i company website homepage.",
+  description: "YPIIS homepage.",
 };
 
 export default function RootLayout({
@@ -32,7 +31,7 @@ export default function RootLayout({
         <Header />
 
         {/* MAIN CONTENT CONTAINER (The Page content goes here) */}
-        <main className=" flex-1 min-h-screen pt-20 bg-[#faf8f500]">
+        <main className=" flex-1 min-h-screen pt-20 bg-[#FAF8F5]">
           {/* pt-20 is for header clearance if fixed */}
           {children}
         </main>

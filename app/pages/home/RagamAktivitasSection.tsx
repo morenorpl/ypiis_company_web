@@ -1,8 +1,8 @@
 "use client";
 
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiX } from "react-icons/fi";
 import FadeIn from "../../components/animation/FadeIn";
 
 interface ActivityItem {
@@ -10,7 +10,9 @@ interface ActivityItem {
   category: string;
   title: string;
   description: string;
+  fullDescription?: string;
   imageSrc: string;
+  additionalImages?: string[];
   theme: "maroon" | "gold" | "image";
 }
 
@@ -28,16 +30,19 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-1.png",
+      imageSrc: "/ragam-jogging.jpg",
       theme: "image",
     },
     bottom: {
       id: "act-2",
-      category: "RIHLAH",
-      title: "Ujian Tasmi' untuk Kenaikan Juz",
+      category: "JUM'AT SEHAT",
+      title: "Jogging Pagi dan Senam Bersama",
       description:
-        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
-      imageSrc: "",
+        "Program menjaga kebugaran jasmani seluruh santri yang diadakan rutin setiap hari Jumat pagi.",
+      fullDescription:
+        "Kegiatan Jum'at Sehat dirancang untuk menjaga stamina, kesehatan, dan semangat para santri di tengah rutinitas belajar. Diawali dengan jogging mengelilingi area lingkungan sekolah dan dilanjutkan dengan senam kesegaran jasmani bersama para ustadz dan pengasuh.",
+      imageSrc: "/ragam-jogging.jpg",
+      additionalImages: ["/ragam-add-jogging1.jpg", "/ragam-add-jogging2.jpg"],
       theme: "gold",
     },
   },
@@ -49,7 +54,10 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
         "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
-      imageSrc: "",
+      fullDescription:
+        "Ujian Tasmi' merupakan momen krusial di mana santri memperdengarkan hafalan Al-Qur'an satu juz penuh tanpa terputus di hadapan penguji dan rekan-rekan santri. Program ini bertujuan melatih mental, ketelitian hafalan, serta menjaga kualitas tajwid para santri.",
+      imageSrc: "/ragam-tasmi.jpg",
+      additionalImages: ["/ragam-add-tasmi1.jpg", "/ragam-add-tasmi2.png"],
       theme: "maroon",
     },
     bottom: {
@@ -57,7 +65,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-2.png",
+      imageSrc: "/ragam-tasmi.jpg",
       theme: "image",
     },
   },
@@ -68,16 +76,19 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-1.png",
+      imageSrc: "/ragam-budaya.png",
       theme: "image",
     },
     bottom: {
       id: "act-6",
-      category: "KUNJUNGAN",
-      title: "Ujian Tasmi' untuk Kenaikan Juz",
+      category: "ACARA NASIONAL",
+      title: "Perayaan Hari Budaya Nasional",
       description:
-        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
-      imageSrc: "",
+        "Ajang memperkenal keberagaman budaya nusantara kepada santri melalui berbagai pentas seni.",
+      fullDescription:
+        "Mengenal kebudayaan nusantara secara mendalam melalui pertunjukan seni, pakaian adat, serta pameran kuliner tradisional khas dari berbagai daerah di Indonesia. Dikelola langsung oleh organisasi santri untuk memupuk kebhinekaan dan toleransi.",
+      imageSrc: "/ragam-budaya.png",
+      additionalImages: ["/ragam-add-budaya1.png", "/ragam-add-budaya2.png"],
       theme: "maroon",
     },
   },
@@ -85,11 +96,17 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     id: "col-4",
     top: {
       id: "act-7",
-      category: "EXTERNAL",
-      title: "Ujian Tasmi' untuk Kenaikan Juz",
+      category: "Classmeet",
+      title: "Beragam Lomba Antarkelas",
       description:
-        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
-      imageSrc: "",
+        "Kompetisi olahraga antarkelas untuk mempererat rasa persaudaraan dan kebersamaan.",
+      fullDescription:
+        "Kegiatan classmeet diisi dengan kompetisi seru antar jenjang kelas. Tarik tambang menjadi salah satu cabang terfavorit yang menguji kekompakan, strategi tim, dan daya juang fisik antarsantri dalam suasana penuh kegembiraan.",
+      imageSrc: "/ragam-classmeet.jpg",
+      additionalImages: [
+        "/ragam-add-classmeet1.jpg",
+        "/ragam-add-classmeet2.jpg",
+      ],
       theme: "gold",
     },
     bottom: {
@@ -97,7 +114,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-2.png",
+      imageSrc: "/ragam-classmeet.jpg",
       theme: "image",
     },
   },
@@ -108,16 +125,22 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-1.png",
+      imageSrc: "/ragam-outingclass.jpg",
       theme: "image",
     },
     bottom: {
       id: "act-10",
-      category: "KUNJUNGAN",
-      title: "Kunjungan Edukatif Santri",
+      category: "OUTING CLASS",
+      title: "Kunjungan Edukatif ke Pabrik dan Industri",
       description:
-        "Kegiatan pembelajaran di luar kelas untuk memperluas wawasan para santri.",
-      imageSrc: "",
+        "Kegiatan pembelajaran di luar kelas untuk memperluas wawasan dan pengalaman para santri.",
+      fullDescription:
+        "Santri diajak melihat secara langsung proses produksi industri dari hulu ke hilir. Selain mengamati proses manufaktur modern, santri juga mendapatkan materi entrepreneurship dasar langsung dari praktisi industri.",
+      imageSrc: "/ragam-outingclass.jpg",
+      additionalImages: [
+        "/ragam-add-outingclass1.jpg",
+        "/ragam-add-outingclass2.jpg",
+      ],
       theme: "gold",
     },
   },
@@ -125,11 +148,14 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     id: "col-6",
     top: {
       id: "act-11",
-      category: "RIHLAH",
-      title: "Rihlah Alam & Karakter",
+      category: "UPACARA",
+      title: "Upacara Bendera di Lapangan Sekolah",
       description:
-        "Menanamkan nilai kemandirian dan kebersamaan melalui kegiatan di alam terbuka.",
-      imageSrc: "",
+        "Menanamkan nilai kedisiplinan dan jiwa nasionalisme melalui rutinitas upacara bendera.",
+      fullDescription:
+        "Upacara bendera dilaksanakan secara khidmat sebagai wadah pembentukan karakter disiplin, penghormatan kepada sejarah bangsa, serta melatih kepemimpinan petugas upacara yang digilir secara berkala.",
+      imageSrc: "/ragam-upacara.jpg",
+      additionalImages: ["/ragam-add-upacara1.jpg", "/ragam-add-upacara2.jpg"],
       theme: "maroon",
     },
     bottom: {
@@ -137,7 +163,53 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-aktivitas-dummy-2.png",
+      imageSrc: "/ragam-upacara.jpg",
+      theme: "image",
+    },
+  },
+  {
+    id: "col-7",
+    top: {
+      id: "act-13",
+      category: "",
+      title: "",
+      description: "",
+      imageSrc: "/ragam-peskil.jpg",
+      theme: "image",
+    },
+    bottom: {
+      id: "act-14",
+      category: "PESKIL",
+      title: "Pesantren Kilat di Bulan Ramadhan",
+      description:
+        "Intensifikasi ibadah dan pendalaman ilmu syar'i selama bulan suci Ramadhan.",
+      fullDescription:
+        "Program intensif bulan Ramadhan yang diisi dengan kajian kitab kuning, halaqah tahfizh, iktikaf, serta kegiatan bakti sosial pembagian sembako dan takjil gratis bagi masyarakat sekitar.",
+      imageSrc: "/ragam-peskil.jpg",
+      additionalImages: ["/ragam-add-peskil1.jpg", "/ragam-add-peskil2.jpg"],
+      theme: "maroon",
+    },
+  },
+  {
+    id: "col-8",
+    top: {
+      id: "act-15",
+      category: "PELATIHAN",
+      title: "Pelatihan Praktek Pengurusan Jenazah",
+      description:
+        "Pembekalan Fardhu Kifayah mencakup tatacara memandikan hingga menyalatkan jenazah.",
+      fullDescription:
+        "Pembekalan fardhu kifayah mendasar bagi santri agar siap terjun di masyarakat. Santri dibimbing secara rinci mengenai tata cara memandikan, mengkafani, menyalatkan, hingga memakamkan sesuai sunnah.",
+      imageSrc: "/ragam-jenazah.jpeg",
+      additionalImages: ["/galeri-4.jpeg", "/ragam-add-jenazah1.jpeg"],
+      theme: "gold",
+    },
+    bottom: {
+      id: "act-16",
+      category: "",
+      title: "",
+      description: "",
+      imageSrc: "/ragam-jenazah.jpeg",
       theme: "image",
     },
   },
@@ -145,6 +217,46 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
 
 export default function RagamAktivitasSection() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const [selectedActivity, setSelectedActivity] = useState<ActivityItem | null>(
+    null,
+  );
+
+  // States to handle entry & exit transitions smoothly
+  const [isMounted, setIsMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  // Handle open modal with transition
+  const handleOpenModal = (item: ActivityItem) => {
+    setSelectedActivity(item);
+    setIsMounted(true);
+    // Request animation frame ensures DOM mounting before applying active transition classes
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        setIsOpen(true);
+      });
+    });
+  };
+
+  // Handle close modal with transition
+  const handleCloseModal = () => {
+    setIsOpen(false);
+    setTimeout(() => {
+      setIsMounted(false);
+      setSelectedActivity(null);
+    }, 300); // 300ms matches the transition duration
+  };
+
+  // Lock body scroll when modal is open
+  useEffect(() => {
+    if (isMounted) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMounted]);
 
   const handleScroll = (direction: "left" | "right") => {
     const container = scrollContainerRef.current;
@@ -278,18 +390,112 @@ export default function RagamAktivitasSection() {
                   isLast ? "snap-end" : "snap-start"
                 }`}
               >
-                <CardBox item={col.top} />
-                <CardBox item={col.bottom} />
+                <CardBox item={col.top} onSelect={handleOpenModal} />
+                <CardBox item={col.bottom} onSelect={handleOpenModal} />
               </div>
             );
           })}
         </div>
       </div>
+
+      {/* 3. FLOATING SCROLLABLE MODAL WITH TRANSITIONS */}
+      {isMounted && selectedActivity && (
+        <div
+          className={`fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 md:p-10 transition-all duration-300 ease-out ${
+            isOpen
+              ? "bg-black/70 backdrop-blur-sm"
+              : "bg-black/0 backdrop-blur-none pointer-events-none"
+          }`}
+        >
+          {/* Backdrop Click */}
+          <div className="absolute inset-0" onClick={handleCloseModal} />
+
+          {/* Modal Card */}
+          <div
+            className={`relative w-full max-w-3xl bg-white rounded-2xl shadow-2xl overflow-hidden z-10 flex flex-col max-h-[90vh] transition-all duration-300 ease-out ${
+              isOpen
+                ? "opacity-100 scale-100 translate-y-0"
+                : "opacity-0 scale-95 translate-y-4"
+            }`}
+          >
+            {/* Sticky Header with Close Button */}
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 bg-white sticky top-0 z-20">
+              <span className="text-xs font-bold uppercase tracking-widest text-[#937A25]">
+                {selectedActivity.category}
+              </span>
+              <button
+                onClick={handleCloseModal}
+                className="p-2 rounded-full hover:bg-gray-100 text-gray-500 hover:text-gray-800 transition-colors active:scale-95"
+                aria-label="Close modal"
+              >
+                <FiX size={22} />
+              </button>
+            </div>
+
+            {/* Scrollable Modal Content Body */}
+            <div className="p-6 sm:p-8 overflow-y-auto space-y-6">
+              {/* Title & Text */}
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-extrabold text-[#8A3635] mb-3 leading-snug">
+                  {selectedActivity.title}
+                </h3>
+                <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                  {selectedActivity.fullDescription ||
+                    selectedActivity.description}
+                </p>
+              </div>
+
+              {/* Image Gallery Showcase */}
+              <div className="space-y-3">
+                <h4 className="text-xs font-bold uppercase tracking-wider text-gray-400">
+                  Dokumentasi Kegiatan
+                </h4>
+
+                {/* Main Large Image */}
+                <div className="relative h-60 sm:h-72 w-full rounded-xl overflow-hidden bg-gray-100 shadow-inner group/img">
+                  <Image
+                    src={selectedActivity.imageSrc || "/ragam-jogging.jpg"}
+                    alt={selectedActivity.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover/img:scale-105"
+                  />
+                </div>
+
+                {/* Secondary Images Grid */}
+                {selectedActivity.additionalImages &&
+                  selectedActivity.additionalImages.length > 0 && (
+                    <div className="grid grid-cols-2 gap-3">
+                      {selectedActivity.additionalImages.map((img, idx) => (
+                        <div
+                          key={idx}
+                          className="relative h-32 sm:h-40 w-full rounded-lg overflow-hidden bg-gray-100 shadow-sm group/thumb"
+                        >
+                          <Image
+                            src={img}
+                            alt={`${selectedActivity.title} detail ${idx + 1}`}
+                            fill
+                            className="object-cover transition-transform duration-500 group-hover/thumb:scale-110"
+                          />
+                        </div>
+                      ))}
+                    </div>
+                  )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
 
-function CardBox({ item }: { item: ActivityItem }) {
+function CardBox({
+  item,
+  onSelect,
+}: {
+  item: ActivityItem;
+  onSelect: (item: ActivityItem) => void;
+}) {
   if (item.theme === "image") {
     return (
       <div className="relative h-72 sm:h-80 2xl:h-96 w-full overflow-hidden group/card">
@@ -313,7 +519,8 @@ function CardBox({ item }: { item: ActivityItem }) {
 
   return (
     <div
-      className={`h-72 sm:h-80 2xl:h-96 w-full ${bgColor} text-white p-6 flex flex-col justify-between relative group/card cursor-pointer transition-all duration-300`}
+      onClick={() => onSelect(item)}
+      className={`h-72 sm:h-80 2xl:h-96 w-full ${bgColor} text-white p-6 flex flex-col justify-between relative group/card cursor-pointer transition-all duration-300 hover:brightness-110 active:scale-[0.99]`}
     >
       <div className="flex flex-col items-center justify-center text-center my-auto">
         {/* Category Header with lines */}

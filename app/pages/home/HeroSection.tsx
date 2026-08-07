@@ -49,7 +49,7 @@ export default function HeroSection() {
       >
         {/* Base Background Image */}
         <Image
-          src="/hero-school.jpg"
+          src="/hero-banner.png"
           alt="Gedung Yayasan Pendidikan Islam Imam Syafi'i"
           fill
           priority
@@ -58,7 +58,7 @@ export default function HeroSection() {
         />
 
         {/* Subtle Gradient Overlay for visual polish */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/10 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-linear-to-t from-black/70 via-black/50 to-transparent pointer-events-none" />
       </FadeIn>
     </section>
   );

@@ -12,99 +12,112 @@ interface GalleryItem {
 const ROW_1: GalleryItem[] = [
   {
     id: "1",
-    title: "Judul 1",
-    description: "Deskripsi 1",
-    imageSrc: "/images/galeri-1.jpg",
+    title: "Hafalan Qur'an",
+    description: "Melatih kekuatan hafalan Al-Qur'an secara mandiri.",
+    imageSrc: "/galeri-1.png",
   },
   {
     id: "2",
-    title: "Judul 2",
-    description: "Deskripsi 2",
-    imageSrc: "/images/galeri-2.jpg",
+    title: "PPDB",
+    description: "Proses penerimaan peserta didik baru bersama orang tua.",
+    imageSrc: "/galeri-2.jpeg",
   },
   {
     id: "3",
-    title: "Judul 3",
-    description: "Deskripsi 3",
-    imageSrc: "/images/galeri-3.jpg",
+    title: "Karya Hari Budaya",
+    description:
+      "Salah satu hasil karya santri dalam rangka memperingati Hari Budaya.",
+    imageSrc: "/galeri-3.jpg",
   },
   {
     id: "4",
-    title: "Judul 4",
-    description: "Deskripsi 4",
-    imageSrc: "/images/galeri-4.jpg",
+    title: "Teori Pengurusan Jenazah",
+    description:
+      "Bagian penjelasan teori dari kegiatan pembelajaran pengurusan jenazah.",
+    imageSrc: "/galeri-4.jpeg",
   },
   {
     id: "5",
-    title: "Judul 5",
-    description: "Deskripsi 5",
-    imageSrc: "/images/galeri-5.jpg",
+    title: "Perjalanan ke Tempat Kunjungan",
+    description:
+      "Santri berjalan menuju tempat kunjungan yang telah ditentukan.",
+    imageSrc: "/galeri-5.jpg",
   },
 ];
 
 const ROW_2: GalleryItem[] = [
   {
     id: "6",
-    title: "Judul 6",
-    description: "Deskripsi 6",
-    imageSrc: "/images/galeri-6.jpg",
+    title: "Pemilihan OSIS",
+    description:
+      "Acara pemilihan OSIS yang diikuti oleh seluruh santri dan guru.",
+    imageSrc: "/galeri-6.jpg",
   },
   {
     id: "7",
-    title: "Judul 7",
-    description: "Deskripsi 7",
-    imageSrc: "/images/galeri-7.jpg",
+    title: "Seminar Remaja",
+    description:
+      "Seminar remaja yang diadakan untuk menambah wawasan dan pengetahuan santri.",
+    imageSrc: "/galeri-7.jpg",
   },
   {
     id: "8",
-    title: "Judul 8",
-    description: "Deskripsi 8",
-    imageSrc: "/images/galeri-8.jpg",
+    title: "Munaqosyah Ummi",
+    description:
+      "ujian akhir kelulusan pembelajaran Al-Qur'an menggunakan metode Ummi",
+    imageSrc: "/galeri-8.jpg",
   },
   {
     id: "9",
-    title: "Judul 9",
-    description: "Deskripsi 9",
-    imageSrc: "/images/galeri-9.jpg",
+    title: "Kajian Jum'at Pagi",
+    description:
+      "Kajian rutin di masa MPLS untuk meningkatkan pemahaman agama santri.",
+    imageSrc: "/galeri-9.png",
   },
   {
     id: "10",
-    title: "Judul 10",
-    description: "Deskripsi 10",
-    imageSrc: "/images/galeri-10.jpg",
+    title: "MKKS",
+    description:
+      "Kegiatan Musyawarah Kerja Kepala Sekolah untuk membahas program pendidikan.",
+    imageSrc: "/galeri-10.jpeg",
   },
 ];
 
 const ROW_3: GalleryItem[] = [
   {
     id: "11",
-    title: "Judul 11",
-    description: "Deskripsi 11",
-    imageSrc: "/images/galeri-11.jpg",
+    title: "Suasana Kelas",
+    description:
+      "Terdapat Pojok Kreatif, hasil dari karya-karya santri di kelas.",
+    imageSrc: "/galeri-11.jpg",
   },
   {
     id: "12",
-    title: "Judul 12",
-    description: "Deskripsi 12",
-    imageSrc: "/images/galeri-12.jpg",
+    title: "Penghargaan Kelulusan Tasmi",
+    description:
+      "Penghargaan kelulusan santri yang telah menyelesaikan hafalan juz Al-Qur'an tertentu.",
+    imageSrc: "/galeri-12.jpg",
   },
   {
     id: "13",
-    title: "Judul 13",
-    description: "Deskripsi 13",
-    imageSrc: "/images/galeri-13.jpg",
+    title: "Kegiatan BK",
+    description:
+      "Kegiatan bimbingan konseling untuk mendukung perkembangan emosional santri.",
+    imageSrc: "/galeri-13.jpg",
   },
   {
     id: "14",
-    title: "Judul 14",
-    description: "Deskripsi 14",
-    imageSrc: "/images/galeri-14.jpg",
+    title: "Program 5S",
+    description:
+      "Penerapan program Senyum, Salam, Sapa, Sopan, dan Santun.. alias 5S",
+    imageSrc: "/galeri-14.jpg",
   },
   {
     id: "15",
-    title: "Judul 15",
-    description: "Deskripsi 15",
-    imageSrc: "/images/galeri-15.jpg",
+    title: "Busana pada Hari Budaya",
+    description:
+      "Pakaian khas yang dikenakan santri pada peringatan Hari Budaya.",
+    imageSrc: "/galeri-15.png",
   },
 ];
 

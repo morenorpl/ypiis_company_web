@@ -23,8 +23,9 @@ export default function TentangKamiSection() {
         </FadeIn>
         <FadeIn delay={0.2} duration={1} x={-40} once={true}>
           <p className="text-base sm:text-lg 2xl:text-xl text-[#1B1B1B] font-medium leading-relaxed">
-            Sebuah yayasan di Kabupaten Berau, Kalimantan Timur yang bergerak di
-            bidang pendidikan Islam, pengabdian masyarakat, dan sosial.
+            Sebuah yayasan pendidikan di Kabupaten Berau, Kalimantan Timur yang
+            bergerak di bidang pendidikan Islam, pengabdian masyarakat, dan
+            sosial.
           </p>
         </FadeIn>
       </div>
@@ -64,9 +65,9 @@ export default function TentangKamiSection() {
 
               <div>
                 {/* 1. Dedicated Image Wrapper (Relative + Height + Rounded) */}
-                <div className="relative w-full h-36 sm:h-40 rounded-lg overflow-hidden border border-white/20 my-2">
+                <div className="relative w-full h-36 sm:h-40 rounded-lg overflow-hidden mb-10 border border-white/20 my-2">
                   <Image
-                    src="/tentang-kami-classroom.png"
+                    src="/tentang-kami-kelas.jpg"
                     alt="Kegiatan Belajar Santri YPIIS"
                     fill
                     className="object-cover object-center"
@@ -82,7 +83,7 @@ export default function TentangKamiSection() {
               </div>
 
               {/* 3. Full Card Dark Overlay on Hover */}
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/60 transition-colors duration-300 flex items-center justify-center p-2 text-center pointer-events-none">
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/60 transition-colors duration-300 flex items-center justify-center p-2 text-center pointer-events-none">
                 <span className="text-sm sm:text-base font-bold text-white opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0 transition-all duration-300 drop-shadow-md">
                   Klik untuk lihat selengkapnya &rarr;
                 </span>
@@ -155,7 +156,7 @@ export default function TentangKamiSection() {
         >
           <div className="w-full h-full min-h-[300px] lg:min-h-[480px] relative border-2 border-[#A2A2A2] rounded-xl shadow-sm hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-300 group overflow-hidden">
             <Image
-              src="/tentang-kami-classroom.png"
+              src="/tentang-kami-award.jpg"
               alt="Kegiatan Belajar Santri YPIIS"
               fill
               className="object-cover object-center group-hover:scale-105 transition-transform duration-500"

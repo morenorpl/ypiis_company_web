@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="relative w-full min-h-[450px] sm:min-h-[550px] lg:h-[600px] 2xl:h-[700px] flex flex-col items-center justify-center overflow-hidden py-12 px-4">
         {/* Background Image */}
         <Image
-          src="/gedung-fasilitas-dummy.png"
+          src="/gedung-kelas.png"
           alt="YPIIS Background"
           fill
           className="object-cover"

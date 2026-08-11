@@ -31,7 +31,7 @@ export default function RootLayout({
         <Header />
 
         {/* MAIN CONTENT CONTAINER (The Page content goes here) */}
-        <main className=" flex-1 min-h-screen pt-20 bg-[#FAF8F5]">
+        <main className=" flex-1 min-h-screen pt-20 bg-[#faf8f500]">
           {/* pt-20 is for header clearance if fixed */}
           {children}
         </main>

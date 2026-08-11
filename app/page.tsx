@@ -10,7 +10,7 @@ import PetaLokasiSection from "./pages/home/PetaLokasiSection";
 
 export default function HomePage() {
   return (
-    <div className="relative space-y-24 2xl:space-y-40 pb-46 before:absolute before:inset-0 before:-z-10 before:opacity-5 before:bg-[url('../public/pattern.jpg')] before:bg-repeat">
+    <div className="relative space-y-24 2xl:space-y-40 pb-46 before:absolute before:inset-0 before:-z-10 before:opacity-5 before:bg-[url('/pattern.jpg')] before:bg-repeat">
       {/* 1. Hero Section (Image and Title) */}
       <HeroSection />
 

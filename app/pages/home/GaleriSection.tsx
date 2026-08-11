@@ -38,10 +38,10 @@ const ROW_1: GalleryItem[] = [
   },
   {
     id: "5",
-    title: "Perjalanan ke Tempat Kunjungan",
+    title: "Keseruan Pramuka",
     description:
-      "Santri berjalan menuju tempat kunjungan yang telah ditentukan.",
-    imageSrc: "/galeri-5.jpg",
+      "Siswa baris-berbaris untuk melatih kerapihan dan keterampilan.",
+    imageSrc: "/galeri-17.jpeg",
   },
 ];
 
@@ -55,24 +55,22 @@ const ROW_2: GalleryItem[] = [
   },
   {
     id: "7",
-    title: "Seminar Remaja",
-    description:
-      "Seminar remaja yang diadakan untuk menambah wawasan dan pengetahuan santri.",
-    imageSrc: "/galeri-7.jpg",
+    title: "Mini Soccer",
+    description: "Keseruan santri-santri ikbs dalam pertandingan mini soccer",
+    imageSrc: "/ragam-minisoccer.jpeg",
   },
   {
     id: "8",
-    title: "Munaqosyah Ummi",
-    description:
-      "ujian akhir kelulusan pembelajaran Al-Qur'an menggunakan metode Ummi.",
-    imageSrc: "/galeri-8.jpg",
+    title: "belajar di Lab Komputer",
+    description: "Momen siswa mengasah kemampuan untuk menggunakan computer.",
+    imageSrc: "/galeri-16.jpeg",
   },
   {
     id: "9",
-    title: "Kajian Jum'at Pagi",
+    title: "Satu Juz Sekali Duduk",
     description:
-      "Kajian rutin di masa MPLS untuk meningkatkan pemahaman agama santri.",
-    imageSrc: "/galeri-9.png",
+      "Momen santri melaksanakan test kemampuan hafalan satu juz sekali duduk.",
+    imageSrc: "/ragam-tasmisejuz.jpeg",
   },
   {
     id: "10",
@@ -93,7 +91,7 @@ const ROW_3: GalleryItem[] = [
   },
   {
     id: "12",
-    title: "Penghargaan Kelulusan Tasmi",
+    title: "Penghargaan Kelulusan Tasmi (Putri)",
     description:
       "Penghargaan kelulusan santri yang telah menyelesaikan hafalan juz Al-Qur'an tertentu.",
     imageSrc: "/galeri-12.jpg",
@@ -107,17 +105,16 @@ const ROW_3: GalleryItem[] = [
   },
   {
     id: "14",
-    title: "Program 5S",
+    title: "Ekskul Berenang",
     description:
-      "Penerapan program Senyum, Salam, Sapa, Sopan, dan Santun.. alias 5S",
-    imageSrc: "/galeri-14.jpg",
+      "Momen keseruan dalam mempelajari cara benar untuk berenang di kolam.",
+    imageSrc: "/ragam-add-berenang2.jpg",
   },
   {
     id: "15",
-    title: "Busana pada Hari Budaya",
-    description:
-      "Pakaian khas yang dikenakan santri pada peringatan Hari Budaya.",
-    imageSrc: "/galeri-15.png",
+    title: "Belajar Sholat",
+    description: "Momen anak-anak TK-KB belajar tata cara sholat yang shahih.",
+    imageSrc: "/galeri-15.jpeg",
   },
 ];
 

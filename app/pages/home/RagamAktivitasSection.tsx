@@ -30,19 +30,22 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-jogging.jpg",
+      imageSrc: "/ragam-marketday.jpeg",
       theme: "image",
     },
     bottom: {
       id: "act-2",
-      category: "JUM'AT SEHAT",
-      title: "Jogging Pagi dan Senam Bersama",
+      category: "TAUD & TK-KB IMAM SYAFI'I",
+      title: "Acara Kewirausahaan Marketday",
       description:
-        "Program menjaga kebugaran jasmani seluruh santri yang diadakan rutin setiap hari Jumat pagi.",
+        "Kegiatan Marketday yang diadakan untuk melatih jiwa kewirausahaan dan keterampilan berbisnis para santri.",
       fullDescription:
-        "Kegiatan Jum'at Sehat dirancang untuk menjaga stamina, kesehatan, dan semangat para santri di tengah rutinitas belajar. Diawali dengan jogging mengelilingi area lingkungan sekolah dan dilanjutkan dengan senam kesegaran jasmani bersama para ustadz dan pengasuh.",
-      imageSrc: "/ragam-jogging.jpg",
-      additionalImages: ["/ragam-add-jogging1.jpg", "/ragam-add-jogging2.jpg"],
+        "Kegiatan Jum'at Sehat dirancang untuk menjaga stamina, kesehatan, dan semangat para santri di tengah rutinitas belajar. Diawali dengan markerday mengelilingi area lingkungan sekolah dan dilanjutkan dengan senam kesegaran jasmani bersama para ustadz dan pengasuh.",
+      imageSrc: "/ragam-marketday.jpeg",
+      additionalImages: [
+        "/ragam-add-marketday1.jpeg",
+        "/ragam-add-marketday2.jpeg",
+      ],
       theme: "gold",
     },
   },
@@ -50,14 +53,14 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     id: "col-2",
     top: {
       id: "act-3",
-      category: "AL-QUR'AN",
+      category: "TAUD & TK-KB IMAM SYAFI'I",
       title: "Ujian Tasmi' untuk Kenaikan Juz",
       description:
         "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
       fullDescription:
         "Ujian Tasmi' merupakan momen krusial di mana santri memperdengarkan hafalan Al-Qur'an satu juz penuh tanpa terputus di hadapan penguji dan rekan-rekan santri. Program ini bertujuan melatih mental, ketelitian hafalan, serta menjaga kualitas tajwid para santri.",
-      imageSrc: "/ragam-tasmi.jpg",
-      additionalImages: ["/ragam-add-tasmi1.jpg", "/ragam-add-tasmi2.png"],
+      imageSrc: "/ragam-sholat.jpeg",
+      additionalImages: ["/ragam-add-sholat1.jpeg", "/ragam-add-sholat2.jpeg"],
       theme: "maroon",
     },
     bottom: {
@@ -65,7 +68,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-tasmi.jpg",
+      imageSrc: "/ragam-sholat.jpeg",
       theme: "image",
     },
   },
@@ -76,19 +79,22 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-budaya.png",
+      imageSrc: "/ragam-berenang.jpg",
       theme: "image",
     },
     bottom: {
       id: "act-6",
-      category: "ACARA NASIONAL",
-      title: "Perayaan Hari Budaya Nasional",
+      category: "SD IBNU KATSIR",
+      title: "Ekstrakurikuler Berenang",
       description:
-        "Ajang memperkenal keberagaman budaya nusantara kepada santri melalui berbagai pentas seni.",
+        "Kegiatan ekstrakurikuler berenang untuk membekali santri dengan keterampilan dasar keselamatan di air.",
       fullDescription:
         "Mengenal kebudayaan nusantara secara mendalam melalui pertunjukan seni, pakaian adat, serta pameran kuliner tradisional khas dari berbagai daerah di Indonesia. Dikelola langsung oleh organisasi santri untuk memupuk kebhinekaan dan toleransi.",
-      imageSrc: "/ragam-budaya.png",
-      additionalImages: ["/ragam-add-budaya1.png", "/ragam-add-budaya2.png"],
+      imageSrc: "/ragam-berenang.jpg",
+      additionalImages: [
+        "/ragam-add-berenang1.jpg",
+        "/ragam-add-berenang2.jpg",
+      ],
       theme: "maroon",
     },
   },
@@ -96,17 +102,14 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     id: "col-4",
     top: {
       id: "act-7",
-      category: "Classmeet",
-      title: "Beragam Lomba Antarkelas",
+      category: "SD IBNU KATSIR",
+      title: "Ekstrakurikuler Panahan",
       description:
-        "Kompetisi olahraga antarkelas untuk mempererat rasa persaudaraan dan kebersamaan.",
+        "Kegiatan ekstrakurikuler panahan untuk membekali santri dengan keterampilan dasar olahraga panahan.",
       fullDescription:
         "Kegiatan classmeet diisi dengan kompetisi seru antar jenjang kelas. Tarik tambang menjadi salah satu cabang terfavorit yang menguji kekompakan, strategi tim, dan daya juang fisik antarsantri dalam suasana penuh kegembiraan.",
-      imageSrc: "/ragam-classmeet.jpg",
-      additionalImages: [
-        "/ragam-add-classmeet1.jpg",
-        "/ragam-add-classmeet2.jpg",
-      ],
+      imageSrc: "/ragam-panah.jpg",
+      additionalImages: ["/ragam-add-panah1.jpg", "/ragam-add-panah2.jpg"],
       theme: "gold",
     },
     bottom: {
@@ -114,7 +117,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-classmeet.jpg",
+      imageSrc: "/ragam-panah.jpg",
       theme: "image",
     },
   },
@@ -125,22 +128,19 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-outingclass.jpg",
+      imageSrc: "/ragam-!!!.jpg",
       theme: "image",
     },
     bottom: {
       id: "act-10",
-      category: "OUTING CLASS",
+      category: "SMP IKBS",
       title: "Kunjungan Edukatif ke Pabrik dan Industri",
       description:
         "Kegiatan pembelajaran di luar kelas untuk memperluas wawasan dan pengalaman para santri.",
       fullDescription:
         "Santri diajak melihat secara langsung proses produksi industri dari hulu ke hilir. Selain mengamati proses manufaktur modern, santri juga mendapatkan materi entrepreneurship dasar langsung dari praktisi industri.",
-      imageSrc: "/ragam-outingclass.jpg",
-      additionalImages: [
-        "/ragam-add-outingclass1.jpg",
-        "/ragam-add-outingclass2.jpg",
-      ],
+      imageSrc: "/ragam-!!!.jpg",
+      additionalImages: ["/ragam-add-!!!1.jpg", "/ragam-add-!!!2.jpg"],
       theme: "gold",
     },
   },
@@ -148,14 +148,14 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     id: "col-6",
     top: {
       id: "act-11",
-      category: "UPACARA",
+      category: "SMP IKBS",
       title: "Upacara Bendera di Lapangan Sekolah",
       description:
         "Menanamkan nilai kedisiplinan dan jiwa nasionalisme melalui rutinitas upacara bendera.",
       fullDescription:
         "Upacara bendera dilaksanakan secara khidmat sebagai wadah pembentukan karakter disiplin, penghormatan kepada sejarah bangsa, serta melatih kepemimpinan petugas upacara yang digilir secara berkala.",
-      imageSrc: "/ragam-upacara.jpg",
-      additionalImages: ["/ragam-add-upacara1.jpg", "/ragam-add-upacara2.jpg"],
+      imageSrc: "/ragam-!!!.jpg",
+      additionalImages: ["/ragam-add-!!!1.jpg", "/ragam-add-!!!2.jpg"],
       theme: "maroon",
     },
     bottom: {
@@ -163,7 +163,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-upacara.jpg",
+      imageSrc: "/ragam-!!!.jpg",
       theme: "image",
     },
   },
@@ -174,12 +174,58 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       category: "",
       title: "",
       description: "",
-      imageSrc: "/ragam-peskil.jpg",
+      imageSrc: "/ragam-!!!.jpg",
       theme: "image",
     },
     bottom: {
       id: "act-14",
-      category: "PESKIL",
+      category: "SMA IKBS",
+      title: "Pesantren Kilat di Bulan Ramadhan",
+      description:
+        "Intensifikasi ibadah dan pendalaman ilmu syar'i selama bulan suci Ramadhan.",
+      fullDescription:
+        "Program intensif bulan Ramadhan yang diisi dengan kajian kitab kuning, halaqah tahfizh, iktikaf, serta kegiatan bakti sosial pembagian sembako dan takjil gratis bagi masyarakat sekitar.",
+      imageSrc: "/ragam-!!!.jpg",
+      additionalImages: ["/ragam-add-!!!1.jpg", "/ragam-add-!!!2.jpeg"],
+      theme: "maroon",
+    },
+  },
+  {
+    id: "col-8",
+    top: {
+      id: "act-15",
+      category: "SMA IKBS",
+      title: "Pelatihan Praktek Pengurusan Jenazah",
+      description:
+        "Pembekalan Fardhu Kifayah mencakup tatacara memandikan hingga menyalatkan jenazah.",
+      fullDescription:
+        "Pembekalan fardhu kifayah mendasar bagi santri agar siap terjun di masyarakat. Santri dibimbing secara rinci mengenai tata cara memandikan, mengkafani, menyalatkan, hingga memakamkan sesuai sunnah.",
+      imageSrc: "/ragam-!!!.jpeg",
+      additionalImages: ["/ragam-!!!.jpeg", "/ragam-add-!!!1.jpeg"],
+      theme: "gold",
+    },
+    bottom: {
+      id: "act-16",
+      category: "",
+      title: "",
+      description: "",
+      imageSrc: "/ragam-!!!.jpeg",
+      theme: "image",
+    },
+  },
+  {
+    id: "col-9",
+    top: {
+      id: "act-17",
+      category: "",
+      title: "",
+      description: "",
+      imageSrc: "/ragam-peskil.jpg",
+      theme: "image",
+    },
+    bottom: {
+      id: "act-18",
+      category: "SMP-SMA IBNU KATSIR PUTRI",
       title: "Pesantren Kilat di Bulan Ramadhan",
       description:
         "Intensifikasi ibadah dan pendalaman ilmu syar'i selama bulan suci Ramadhan.",
@@ -191,10 +237,10 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     },
   },
   {
-    id: "col-8",
+    id: "col-10",
     top: {
-      id: "act-15",
-      category: "PELATIHAN",
+      id: "act-19",
+      category: "SMP-SMA IBNU KATSIR PUTRI",
       title: "Pelatihan Praktek Pengurusan Jenazah",
       description:
         "Pembekalan Fardhu Kifayah mencakup tatacara memandikan hingga menyalatkan jenazah.",
@@ -205,7 +251,7 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
       theme: "gold",
     },
     bottom: {
-      id: "act-16",
+      id: "act-20",
       category: "",
       title: "",
       description: "",

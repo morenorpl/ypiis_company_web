@@ -54,13 +54,13 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
     top: {
       id: "act-3",
       category: "TAUD & TK-KB IMAM SYAFI'I",
-      title: "Ujian Tasmi' untuk Kenaikan Juz",
+      title: "Belajar Tata Cara Sholat Yang Syar'i",
       description:
-        "Program pengetesan hafalan Al-Qur'an secara sekaligus di hadapan para penguji dan santri.",
+        "Pembelajaran dan praktik langsung tata cara sholat sesuai tuntunan syariat sejak usia dini.",
       fullDescription:
-        "Ujian Tasmi' merupakan momen krusial di mana santri memperdengarkan hafalan Al-Qur'an satu juz penuh tanpa terputus di hadapan penguji dan rekan-rekan santri. Program ini bertujuan melatih mental, ketelitian hafalan, serta menjaga kualitas tajwid para santri.",
-      imageSrc: "/ragam-sholat.jpeg",
-      additionalImages: ["/ragam-add-sholat1.jpeg", "/ragam-add-sholat2.jpeg"],
+        "Kegiatan Belajar Tata Cara Sholat Yang Syar'i dirancang khusus untuk mengenalkan serta membiasakan ibadah sholat kepada murid-murid TAUD & TK-KB sejak usia dini. Melalui pendekatan yang menyenangkan dan mudah dipahami, santri cilik dibimbing secara langsung mulai dari gerakan sholat, bacaan-bacaan sholat yang benar sesuai sunnah, hingga kerapian dalam bershaf.",
+      imageSrc: "/ragam-sholat.png",
+      additionalImages: ["/ragam-add-sholat1.png", "/ragam-add-sholat2.png"],
       theme: "maroon",
     },
     bottom: {
@@ -108,8 +108,8 @@ const ACTIVITY_COLUMNS: ColumnPair[] = [
         "Kegiatan ekstrakurikuler panahan untuk membekali santri dengan keterampilan dasar olahraga panahan.",
       fullDescription:
         "Kegiatan classmeet diisi dengan kompetisi seru antar jenjang kelas. Tarik tambang menjadi salah satu cabang terfavorit yang menguji kekompakan, strategi tim, dan daya juang fisik antarsantri dalam suasana penuh kegembiraan.",
-      imageSrc: "/ragam-panah.jpg",
-      additionalImages: ["/ragam-add-panah1.jpg", "/ragam-add-panah2.jpg"],
+      imageSrc: "/ragam-panah.png",
+      additionalImages: ["/ragam-add-panah1.jpg", "/ragam-add-panah2.png"],
       theme: "gold",
     },
     bottom: {

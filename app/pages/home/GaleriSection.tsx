@@ -41,7 +41,7 @@ const ROW_1: GalleryItem[] = [
     title: "Keseruan Pramuka",
     description:
       "Siswa baris-berbaris untuk melatih kerapihan dan keterampilan.",
-    imageSrc: "/galeri-17.jpeg",
+    imageSrc: "/galeri-5.jpeg",
   },
 ];
 
@@ -63,7 +63,7 @@ const ROW_2: GalleryItem[] = [
     id: "8",
     title: "belajar di Lab Komputer",
     description: "Momen siswa mengasah kemampuan untuk menggunakan computer.",
-    imageSrc: "/galeri-16.jpeg",
+    imageSrc: "/galeri-8.png",
   },
   {
     id: "9",
@@ -114,7 +114,7 @@ const ROW_3: GalleryItem[] = [
     id: "15",
     title: "Belajar Sholat",
     description: "Momen anak-anak TK-KB belajar tata cara sholat yang shahih.",
-    imageSrc: "/galeri-15.jpeg",
+    imageSrc: "/ragam-add-sholat1.png",
   },
 ];
 

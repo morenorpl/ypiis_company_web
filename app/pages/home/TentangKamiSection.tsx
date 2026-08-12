@@ -67,7 +67,7 @@ export default function TentangKamiSection() {
                 {/* 1. Dedicated Image Wrapper (Relative + Height + Rounded) */}
                 <div className="relative w-full h-36 sm:h-40 rounded-lg overflow-hidden mb-10 border border-white/20 my-2">
                   <Image
-                    src="/tentang-kami-kelas.jpg"
+                    src="/tentang-kami-kelas.png"
                     alt="Kegiatan Belajar Santri YPIIS"
                     fill
                     className="object-cover object-center"

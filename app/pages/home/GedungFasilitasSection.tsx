@@ -27,8 +27,8 @@ const FACILITIES: GedungFasilitasItem[] = [
       "Gedung sekolah dirancang khusus untuk menciptakan suasana belajar mengajar yang efektif dan representatif. Dilengkapi dengan pencahayaan alami yang baik, pendingin ruangan, fasilitas multimedia terintegrasi, serta meja-kursi ergonomis guna mendukung konsentrasi dan kenyamanan santri selama proses akademik.",
     imageSrc: "/gedung-kelas.png",
     additionalImages: [
-      "/fasilitas-add-kelas1.png",
-      "/fasilitas-add-kelas2.png",
+      "/fasilitas-add-gedung1.webp",
+      "/fasilitas-add-gedung2.jpeg",
     ],
     href: "#",
   },

@@ -13,7 +13,10 @@ const MISSION_POINTS = [
 
 export default function TentangKamiSection() {
   return (
-    <section className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12 py-10 lg:py-16">
+    <section
+      id="tentang-kami"
+      className="max-w-7xl 2xl:max-w-360 mx-auto px-4 sm:px-8 lg:px-12 py-10 lg:py-16"
+    >
       {/* 1. SECTION HEADER */}
       <div className="mb-10 lg:mb-14 space-y-4 max-w-2xl 2xl:max-w-3xl">
         <FadeIn delay={0} duration={1} x={-40} once={true}>
@@ -129,8 +132,8 @@ export default function TentangKamiSection() {
                 <h3 className="text-xl sm:text-2xl 2xl:text-3xl font-extrabold uppercase tracking-wide">
                   Berdiri Sejak
                 </h3>
-                <p className="text-xs sm:text-sm 2xl:text-base text-white font-medium max-w-[180px] leading-snug">
-                  YPIIS telah mengajarkan ilmu syar'i sejak tahun 2006.
+                <p className="text-xs sm:text-sm 2xl:text-base text-white font-medium max-w-45 leading-snug">
+                  YPIIS Berau telah mengajarkan ilmu syar'i sejak tahun 2006.
                 </p>
               </div>
 
@@ -154,7 +157,7 @@ export default function TentangKamiSection() {
           y={30}
           once={true}
         >
-          <div className="w-full h-full min-h-[300px] lg:min-h-[480px] relative border-2 border-[#A2A2A2] rounded-xl shadow-sm hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-300 group overflow-hidden">
+          <div className="w-full h-full min-h-75 lg:min-h-120 relative border-2 border-[#A2A2A2] rounded-xl shadow-sm hover:shadow-xl hover:shadow-gray-300/50 transition-all duration-300 group overflow-hidden">
             <Image
               src="/tentang-kami-award.jpg"
               alt="Kegiatan Belajar Santri YPIIS"

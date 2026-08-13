@@ -12,10 +12,10 @@ import {
 import { FiMenu, FiX } from "react-icons/fi";
 
 const NAV_LINKS = [
-  { name: "Tentang Kami", href: "/tentang-kami" },
-  { name: "Akademik", href: "/akademik" },
-  { name: "Pendaftaran", href: "/pendaftaran" },
-  { name: "Berita", href: "/berita" },
+  { name: "Tentang Kami", href: "#tentang-kami" },
+  { name: "Pendidikan", href: "#pendidikan" },
+  { name: "Infaq", href: "#infaq" },
+  { name: "Pendaftaran", href: "#pendaftaran" },
 ];
 
 export default function Header() {
@@ -27,14 +27,12 @@ export default function Header() {
   useMotionValueEvent(scrollY, "change", (latest) => {
     const previous = scrollY.getPrevious() ?? 0;
 
-    // Track scroll state for background styling if needed
     if (latest > 20) {
       setIsScrolled(true);
     } else {
       setIsScrolled(false);
     }
 
-    // Hide header when scrolling down after 150px, show when scrolling up
     if (latest > previous && latest > 150) {
       setHidden(true);
     } else {
@@ -86,16 +84,16 @@ export default function Header() {
               {/* Left Link Group */}
               <div className="flex items-center gap-10 xl:gap-14 2xl:gap-20">
                 <Link
-                  href="/tentang-kami"
+                  href="#tentang-kami"
                   className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] font-semibold text-base 2xl:text-lg py-2 px-1 whitespace-nowrap"
                 >
                   Tentang Kami
                 </Link>
                 <Link
-                  href="/akademik"
+                  href="#pendidikan"
                   className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] font-semibold text-base 2xl:text-lg py-2 px-1 whitespace-nowrap"
                 >
-                  Akademik
+                  Pendidikan
                 </Link>
               </div>
 
@@ -117,16 +115,16 @@ export default function Header() {
               {/* Right Link Group */}
               <div className="flex items-center gap-10 xl:gap-14 2xl:gap-20">
                 <Link
-                  href="/pendaftaran"
+                  href="#infaq"
+                  className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] font-semibold text-base 2xl:text-lg py-2 px-1 whitespace-nowrap"
+                >
+                  Infaq
+                </Link>
+                <Link
+                  href="#pendaftaran"
                   className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] font-semibold text-base 2xl:text-lg py-2 px-1 whitespace-nowrap"
                 >
                   Pendaftaran
-                </Link>
-                <Link
-                  href="/berita"
-                  className="nav-link-underline transition-all text-gray-800 hover:text-[#8A3635] font-semibold text-base 2xl:text-lg py-2 px-1 whitespace-nowrap"
-                >
-                  Berita
                 </Link>
               </div>
             </div>

@@ -6,7 +6,7 @@ import HoverButton from "../../components/animation/HoverButton";
 
 export default function HeroSection() {
   return (
-    <section className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12 py-8 lg:py-12">
+    <section className="max-w-7xl 2xl:max-w-360 mx-auto px-4 sm:px-8 lg:px-12 py-8 lg:py-12">
       {/* 1. TOP HEADER GRID (Title + Subtext & Button) */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start mb-10 lg:mb-16">
         {/* Left: Main Maroon Heading */}
@@ -19,7 +19,7 @@ export default function HeroSection() {
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl 2xl:text-6xl font-black text-[#8C2C2C] leading-[1.15] tracking-tight uppercase">
             Yayasan Pendidikan <br className="hidden sm:inline" />
-            Islam Imam Syafi'i
+            Islam Imam Syafi'i Berau
           </h1>
         </FadeIn>
 
@@ -41,7 +41,7 @@ export default function HeroSection() {
 
       {/* 2. HERO IMAGE BANNER */}
       <FadeIn
-        className="relative w-full h-[320px] sm:h-[420px] lg:h-[520px] 2xl:h-[620px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg"
+        className="relative w-full h-80 sm:h-105 lg:h-130 2xl:h-155 rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg"
         delay={0.6}
         duration={1}
         y={40}

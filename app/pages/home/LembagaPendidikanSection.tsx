@@ -196,8 +196,8 @@ export default function LembagaPendidikanSection() {
 
   return (
     <section
-      id="lembaga-pendidikan"
-      className="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-8 lg:px-12 py-10 lg:py-16 relative"
+      id="pendidikan"
+      className="max-w-7xl 2xl:max-w-360 mx-auto px-4 sm:px-8 lg:px-12 py-10 lg:py-16 relative"
     >
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
         {/* 1. LEFT SECTION (Tab Navigation) */}
@@ -252,7 +252,7 @@ export default function LembagaPendidikanSection() {
 
                   {/* Horizontal Indicator Line for Active Tab */}
                   <span
-                    className={`w-8 h-[3px] bg-[#8A3635] origin-left transition-transform duration-300 ease-in-out ${
+                    className={`w-8 h-0.75 bg-[#8A3635] origin-left transition-transform duration-300 ease-in-out ${
                       isActive ? "scale-x-100" : "scale-x-0"
                     }`}
                   />
@@ -263,7 +263,7 @@ export default function LembagaPendidikanSection() {
         </div>
 
         {/* 2. RIGHT SECTION (Label + Active Content Display) */}
-        <div className="lg:col-span-9 min-h-[360px] sm:min-h-[400px]">
+        <div className="lg:col-span-9 min-h-90 sm:min-h-100">
           {/* SECTION LABEL */}
           <FadeIn delay={0} duration={0.8} x={30} once={true}>
             <h3 className="text-sm sm:text-base 2xl:text-xl font-black text-[#8C2C2C] uppercase tracking-wider mb-3 lg:mb-4">

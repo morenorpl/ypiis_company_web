@@ -23,7 +23,7 @@ export default function PetaLokasiSection() {
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full grayscale-[20%] contrast-[105%]"
+              className="w-full h-full grayscale-20 contrast-105"
             />
           </div>
         </FadeIn>

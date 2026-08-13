@@ -10,11 +10,11 @@ interface DonasiBantuSectionProps {
 }
 
 export default function DonasiBantuSection({
-  buttonHref = "/donasi",
+  buttonHref = "https://forms.gle/E7A5QVvVU4K9pfQs6",
   patternImageSrc = "/donasi-card-art.svg",
 }: DonasiBantuSectionProps) {
   return (
-    <section className="py-6 lg:py-12 bg-[#faf8f500]">
+    <section id="infaq" className="py-6 lg:py-12 bg-[#faf8f500]">
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Maroon Card Container */}
         <FadeIn delay={0.2} duration={1} y={50} once={true}>
@@ -35,22 +35,23 @@ export default function DonasiBantuSection({
                   </span>{" "}
                   bagi para santri di TPA, SD, SMP, SMA, hingga IKBS untuk
                   mendapatkan fasilitas pendidikan yang memadai. Wujudkan
-                  lingkungan belajar yang nyaman dan islami dengan donasi
-                  terbaik Anda hari ini.
+                  lingkungan belajar yang nyaman dan islami dengan infaq terbaik
+                  Anda hari ini.
                 </p>
 
                 {/* Disclaimer / Subtext */}
                 <p className="text-white/70 italic text-xs mb-6 sm:mb-8 lg:mb-15 2xl:mb-25">
-                  *Seluruh donasi akan dialokasikan untuk pengembangan fasilitas
+                  *Seluruh infaq akan dialokasikan untuk pengembangan fasilitas
                   semua unit pendidikan
                 </p>
               </div>
 
-              {/* Kirim Donasi Button */}
+              {/* Kirim Infaq Button */}
               <div>
                 <Link
+                  target="_blank"
                   href={buttonHref}
-                  className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center sm:justify-start gap-3 group bg-[#F8F7F3] text-[#8A3635] text-base sm:text-lg font-medium w-full sm:w-auto px-6 sm:px-12 lg:px-16 py-3 2xl:px-20 2xl:py-4 rounded-lg hover:text-[#F8F7F3] transition-colors"
+                  className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center sm:justify-start gap-3 group bg-[#F8F7F3] text-[#8A3635] text-base sm:text-lg font-medium w-full sm:w-auto px-10 sm:px-16 lg:px-20 py-3 2xl:px-24 2xl:py-4 rounded-lg hover:text-[#F8F7F3] transition-colors"
                 >
                   {/* Right Caret Icon */}
                   <svg
@@ -66,7 +67,7 @@ export default function DonasiBantuSection({
                       d="M9 5l7 7-7 7"
                     />
                   </svg>
-                  <span>Kirim Donasi</span>
+                  <span>Kirim Infaq</span>
                 </Link>
               </div>
             </div>
@@ -86,7 +87,7 @@ export default function DonasiBantuSection({
                   </div>
                 </div>
               ) : (
-                <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#E89CA3_1px,transparent_1px)] [background-size:16px_16px]" />
+                <div className="absolute inset-0 opacity-25 bg-[radial-gradient(#E89CA3_1px,transparent_1px)] bg-size-[16px_16px]" />
               )}
             </div>
           </div>

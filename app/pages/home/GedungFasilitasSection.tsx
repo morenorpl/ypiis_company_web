@@ -255,7 +255,7 @@ function FacilityCard({
         <div className="flex items-end justify-between gap-2 sm:gap-3 px-1 pb-1 w-full min-w-0">
           {/* Left Container: Title + Number */}
           <div className="flex items-baseline gap-1.5 sm:gap-2 min-w-0 flex-1">
-            <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold text-[#1B1B1B] tracking-tight group-hover:text-[#8A3635] transition-colors leading-snug line-clamp-2 break-words min-w-0">
+            <h3 className="text-base sm:text-lg lg:text-xl xl:text-2xl font-extrabold text-[#1B1B1B] tracking-tight group-hover:text-[#8A3635] transition-colors leading-snug line-clamp-2 wrap-break-word min-w-0">
               {item.title}
             </h3>
             <span className="text-xs sm:text-sm lg:text-base text-[#A2A2A2] font-semibold shrink-0">

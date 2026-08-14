@@ -78,7 +78,7 @@ export default function Footer() {
               >
                 <Link
                   target="_blank"
-                  href={"https://wa.me/628115405834"}
+                  href={"https://wa.me/6285349413010"}
                   className="btn-expand-center relative overflow-hidden inline-flex items-center justify-center gap-3 [--hover-bg:#7D2828]
                    bg-[#1B1B1B] text-white text-sm sm:text-base 2xl:text-lg border border-[#A2A2A2] font-medium w-full sm:w-auto px-6 py-3 rounded-lg transition-all"
                 >
@@ -186,7 +186,7 @@ export default function Footer() {
 
       {/* 3. Floating Modal Notification */}
       {showModal && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
+        <div className="fixed inset-0 z-100 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity">
           <FadeIn
             delay={0}
             duration={0.3}

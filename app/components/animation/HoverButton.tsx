@@ -5,7 +5,8 @@ import { FiArrowUpRight } from "react-icons/fi";
 
 export default function HoverButton() {
   return (
-    <motion.button
+    <motion.a
+      href="#pendaftaran"
       initial="initial"
       whileHover="hover"
       className="group relative flex items-center justify-between gap-10 rounded-full border-2 border-[#802324] bg-[#802324]  pl-10 p-2 px-2.5 transition-colors duration-300 overflow-hidden"
@@ -44,6 +45,6 @@ export default function HoverButton() {
           <FiArrowUpRight size={25} color="#8C2C2C" />
         </motion.span>
       </div>
-    </motion.button>
+    </motion.a>
   );
 }
